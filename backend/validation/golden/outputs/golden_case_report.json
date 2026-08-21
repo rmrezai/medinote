@@ -1,0 +1,628 @@
+{
+  "golden_case_version": "1.1-step41",
+  "synthetic_deidentified": true,
+  "runtime_seconds": 0.34,
+  "source_characters": 1531,
+  "estimated_source_tokens": 383,
+  "external_model_calls": 0,
+  "observed_model_cost_usd": 0.0,
+  "analysis_runs": [
+    {
+      "encounter_id": "b457b743-78d9-4522-a490-1f1c3091f16e",
+      "status": "complete",
+      "extraction_version": "mcif-deterministic-0.1",
+      "sources_analyzed": 1,
+      "facts_created": 10,
+      "labs_created": 7,
+      "vitals_created": 1,
+      "problems_created": 4,
+      "medication_states_created": 5,
+      "pending_items_created": 1,
+      "disposition_states_created": 1,
+      "source_reports": [
+        {
+          "source_document_id": "df857deb-ee97-4074-aab1-cd2a1571cfdb",
+          "document_type": "hp",
+          "candidate_counts": {
+            "facts": 10,
+            "problems": 4,
+            "medications": 5,
+            "labs": 7,
+            "vitals": 1,
+            "consultants": 0,
+            "pending_items": 1,
+            "resolved_items": 0,
+            "procedures": 0,
+            "dispositions": 1
+          }
+        }
+      ],
+      "reconciliation": {
+        "encounter_id": "b457b743-78d9-4522-a490-1f1c3091f16e",
+        "status": "complete",
+        "reconciliation_version": "mcif-reconcile-0.1",
+        "facts_superseded": 0,
+        "medication_states_superseded": 0,
+        "trajectories_updated": 8,
+        "contradictions_created": 0,
+        "rules": [
+          "Timestamp determines recency when available; source authority breaks equal-time ties.",
+          "Unknown timestamps are never fabricated.",
+          "Lab trends are descriptive (rising/falling/stable), not diagnoses or treatment conclusions.",
+          "Home, hospital, and discharge medication domains remain separate.",
+          "Conflicts are surfaced rather than silently resolved when source evidence remains incompatible."
+        ]
+      },
+      "synthesis": {
+        "encounter_id": "b457b743-78d9-4522-a490-1f1c3091f16e",
+        "status": "complete",
+        "synthesis_version": "0.1.0",
+        "problems_processed": 4,
+        "problem_fields_updated": 4,
+        "evidence_links_created": 0,
+        "problems": [
+          {
+            "problem_id": "1ea89362-9c24-4650-80f7-0e5d9c7aa841",
+            "name": "acute hypoxemic respiratory failure",
+            "normalized_name": "acute_hypoxemic_respiratory_failure",
+            "certainty": "confirmed",
+            "status": "active",
+            "acuity_rank": 10,
+            "trajectory_basis": null,
+            "evidence_fact_ids": [],
+            "physician_approved": false
+          },
+          {
+            "problem_id": "3d3d7e00-b836-4daf-9f49-0cdbe3645b75",
+            "name": "Acute kidney injury",
+            "normalized_name": "acute_kidney_injury",
+            "certainty": "confirmed",
+            "status": "active",
+            "acuity_rank": 40,
+            "trajectory_basis": null,
+            "evidence_fact_ids": [],
+            "physician_approved": false
+          },
+          {
+            "problem_id": "cb497a54-ca1d-43af-8e13-3c6e41bd8273",
+            "name": "pneumonia",
+            "normalized_name": "pneumonia",
+            "certainty": "confirmed",
+            "status": "active",
+            "acuity_rank": 60,
+            "trajectory_basis": null,
+            "evidence_fact_ids": [],
+            "physician_approved": false
+          },
+          {
+            "problem_id": "de9d63ea-f700-4a08-9e2c-4b9a5561cce6",
+            "name": "Atrial fibrillation",
+            "normalized_name": "atrial_fibrillation",
+            "certainty": "confirmed",
+            "status": "active",
+            "acuity_rank": 70,
+            "trajectory_basis": null,
+            "evidence_fact_ids": [],
+            "physician_approved": false
+          }
+        ],
+        "rules": [
+          "Synthesis never creates a diagnosis from a lab or vital trend alone.",
+          "Diagnostic certainty is preserved exactly; synthesis does not promote possible/suspected diagnoses.",
+          "Only conservative problem-to-trajectory mappings are enabled in v0.1.",
+          "Acuity rank is a default synthesis priority and is not physician approval.",
+          "Objective evidence links remain traceable to current MCIF facts."
+        ]
+      },
+      "limitations": [
+        "Extraction remains conservative and deterministic for the Step 41 pilot scaffold.",
+        "Only explicit home-medication, exam, therapy/disposition, and final-result language is structured; ambiguous statements remain unstructured rather than guessed.",
+        "No autonomous clinical decisions are created or physician-confirmed."
+      ]
+    },
+    {
+      "encounter_id": "b457b743-78d9-4522-a490-1f1c3091f16e",
+      "status": "complete",
+      "extraction_version": "mcif-deterministic-0.1",
+      "sources_analyzed": 4,
+      "facts_created": 7,
+      "labs_created": 6,
+      "vitals_created": 1,
+      "medication_states_created": 3,
+      "consultants_created": 1,
+      "disposition_states_created": 1,
+      "source_reports": [
+        {
+          "source_document_id": "df857deb-ee97-4074-aab1-cd2a1571cfdb",
+          "document_type": "hp",
+          "candidate_counts": {
+            "facts": 10,
+            "problems": 4,
+            "medications": 5,
+            "labs": 7,
+            "vitals": 1,
+            "consultants": 0,
+            "pending_items": 1,
+            "resolved_items": 0,
+            "procedures": 0,
+            "dispositions": 1
+          }
+        },
+        {
+          "source_document_id": "ee3fad4d-e5a8-4c1c-8c47-13f36ba006f0",
+          "document_type": "progress_note",
+          "candidate_counts": {
+            "facts": 7,
+            "problems": 3,
+            "medications": 3,
+            "labs": 6,
+            "vitals": 1,
+            "consultants": 0,
+            "pending_items": 1,
+            "resolved_items": 0,
+            "procedures": 0,
+            "dispositions": 0
+          }
+        },
+        {
+          "source_document_id": "cefa62dc-443f-4850-8818-bd1e6e712226",
+          "document_type": "consult_note",
+          "candidate_counts": {
+            "facts": 0,
+            "problems": 1,
+            "medications": 0,
+            "labs": 0,
+            "vitals": 0,
+            "consultants": 1,
+            "pending_items": 0,
+            "resolved_items": 0,
+            "procedures": 0,
+            "dispositions": 0
+          }
+        },
+        {
+          "source_document_id": "b6659e85-b2dd-45ce-a000-1d97bda434e0",
+          "document_type": "therapy",
+          "candidate_counts": {
+            "facts": 0,
+            "problems": 0,
+            "medications": 0,
+            "labs": 0,
+            "vitals": 0,
+            "consultants": 0,
+            "pending_items": 0,
+            "resolved_items": 0,
+            "procedures": 0,
+            "dispositions": 1
+          }
+        }
+      ],
+      "reconciliation": {
+        "encounter_id": "b457b743-78d9-4522-a490-1f1c3091f16e",
+        "status": "complete",
+        "reconciliation_version": "mcif-reconcile-0.1",
+        "facts_superseded": 7,
+        "medication_states_superseded": 0,
+        "trajectories_updated": 8,
+        "contradictions_created": 0,
+        "rules": [
+          "Timestamp determines recency when available; source authority breaks equal-time ties.",
+          "Unknown timestamps are never fabricated.",
+          "Lab trends are descriptive (rising/falling/stable), not diagnoses or treatment conclusions.",
+          "Home, hospital, and discharge medication domains remain separate.",
+          "Conflicts are surfaced rather than silently resolved when source evidence remains incompatible."
+        ]
+      },
+      "synthesis": {
+        "encounter_id": "b457b743-78d9-4522-a490-1f1c3091f16e",
+        "status": "complete",
+        "synthesis_version": "0.1.0",
+        "problems_processed": 4,
+        "problem_fields_updated": 3,
+        "evidence_links_created": 2,
+        "problems": [
+          {
+            "problem_id": "1ea89362-9c24-4650-80f7-0e5d9c7aa841",
+            "name": "acute hypoxemic respiratory failure",
+            "normalized_name": "acute_hypoxemic_respiratory_failure",
+            "certainty": "confirmed",
+            "status": "improving",
+            "acuity_rank": 18,
+            "trajectory_basis": "oxygen_support_decreasing",
+            "evidence_fact_ids": [
+              "92cbd18e-99fc-438d-acac-89cc65df53d3"
+            ],
+            "physician_approved": false
+          },
+          {
+            "problem_id": "3d3d7e00-b836-4daf-9f49-0cdbe3645b75",
+            "name": "Acute kidney injury",
+            "normalized_name": "acute_kidney_injury",
+            "certainty": "confirmed",
+            "status": "improving",
+            "acuity_rank": 48,
+            "trajectory_basis": "creatinine_falling",
+            "evidence_fact_ids": [
+              "64046bb5-fdf9-4c2e-8b39-4ad5e0db650c"
+            ],
+            "physician_approved": false
+          },
+          {
+            "problem_id": "cb497a54-ca1d-43af-8e13-3c6e41bd8273",
+            "name": "pneumonia",
+            "normalized_name": "pneumonia",
+            "certainty": "confirmed",
+            "status": "improving",
+            "acuity_rank": 68,
+            "trajectory_basis": null,
+            "evidence_fact_ids": [],
+            "physician_approved": false
+          },
+          {
+            "problem_id": "de9d63ea-f700-4a08-9e2c-4b9a5561cce6",
+            "name": "Atrial fibrillation",
+            "normalized_name": "atrial_fibrillation",
+            "certainty": "confirmed",
+            "status": "active",
+            "acuity_rank": 70,
+            "trajectory_basis": null,
+            "evidence_fact_ids": [],
+            "physician_approved": false
+          }
+        ],
+        "rules": [
+          "Synthesis never creates a diagnosis from a lab or vital trend alone.",
+          "Diagnostic certainty is preserved exactly; synthesis does not promote possible/suspected diagnoses.",
+          "Only conservative problem-to-trajectory mappings are enabled in v0.1.",
+          "Acuity rank is a default synthesis priority and is not physician approval.",
+          "Objective evidence links remain traceable to current MCIF facts."
+        ]
+      },
+      "limitations": [
+        "Extraction remains conservative and deterministic for the Step 41 pilot scaffold.",
+        "Only explicit home-medication, exam, therapy/disposition, and final-result language is structured; ambiguous statements remain unstructured rather than guessed.",
+        "No autonomous clinical decisions are created or physician-confirmed."
+      ]
+    },
+    {
+      "encounter_id": "b457b743-78d9-4522-a490-1f1c3091f16e",
+      "status": "complete",
+      "extraction_version": "mcif-deterministic-0.1",
+      "sources_analyzed": 6,
+      "medication_states_created": 7,
+      "facts_created": 10,
+      "labs_created": 7,
+      "vitals_created": 2,
+      "pending_items_resolved": 1,
+      "disposition_states_created": 1,
+      "source_reports": [
+        {
+          "source_document_id": "df857deb-ee97-4074-aab1-cd2a1571cfdb",
+          "document_type": "hp",
+          "candidate_counts": {
+            "facts": 10,
+            "problems": 4,
+            "medications": 5,
+            "labs": 7,
+            "vitals": 1,
+            "consultants": 0,
+            "pending_items": 1,
+            "resolved_items": 0,
+            "procedures": 0,
+            "dispositions": 1
+          }
+        },
+        {
+          "source_document_id": "ee3fad4d-e5a8-4c1c-8c47-13f36ba006f0",
+          "document_type": "progress_note",
+          "candidate_counts": {
+            "facts": 7,
+            "problems": 3,
+            "medications": 3,
+            "labs": 6,
+            "vitals": 1,
+            "consultants": 0,
+            "pending_items": 1,
+            "resolved_items": 0,
+            "procedures": 0,
+            "dispositions": 0
+          }
+        },
+        {
+          "source_document_id": "cefa62dc-443f-4850-8818-bd1e6e712226",
+          "document_type": "consult_note",
+          "candidate_counts": {
+            "facts": 0,
+            "problems": 1,
+            "medications": 0,
+            "labs": 0,
+            "vitals": 0,
+            "consultants": 1,
+            "pending_items": 0,
+            "resolved_items": 0,
+            "procedures": 0,
+            "dispositions": 0
+          }
+        },
+        {
+          "source_document_id": "b6659e85-b2dd-45ce-a000-1d97bda434e0",
+          "document_type": "therapy",
+          "candidate_counts": {
+            "facts": 0,
+            "problems": 0,
+            "medications": 0,
+            "labs": 0,
+            "vitals": 0,
+            "consultants": 0,
+            "pending_items": 0,
+            "resolved_items": 0,
+            "procedures": 0,
+            "dispositions": 1
+          }
+        },
+        {
+          "source_document_id": "e1367359-45e1-4601-8887-7143c91b737b",
+          "document_type": "progress_note",
+          "candidate_counts": {
+            "facts": 8,
+            "problems": 3,
+            "medications": 2,
+            "labs": 6,
+            "vitals": 1,
+            "consultants": 0,
+            "pending_items": 0,
+            "resolved_items": 1,
+            "procedures": 0,
+            "dispositions": 0
+          }
+        },
+        {
+          "source_document_id": "baa7c0eb-9df1-45d2-800f-5867205f1f00",
+          "document_type": "discharge",
+          "candidate_counts": {
+            "facts": 2,
+            "problems": 2,
+            "medications": 2,
+            "labs": 1,
+            "vitals": 1,
+            "consultants": 0,
+            "pending_items": 0,
+            "resolved_items": 0,
+            "procedures": 0,
+            "dispositions": 1
+          }
+        }
+      ],
+      "reconciliation": {
+        "encounter_id": "b457b743-78d9-4522-a490-1f1c3091f16e",
+        "status": "complete",
+        "reconciliation_version": "mcif-reconcile-0.1",
+        "facts_superseded": 9,
+        "medication_states_superseded": 5,
+        "trajectories_updated": 8,
+        "contradictions_created": 0,
+        "rules": [
+          "Timestamp determines recency when available; source authority breaks equal-time ties.",
+          "Unknown timestamps are never fabricated.",
+          "Lab trends are descriptive (rising/falling/stable), not diagnoses or treatment conclusions.",
+          "Home, hospital, and discharge medication domains remain separate.",
+          "Conflicts are surfaced rather than silently resolved when source evidence remains incompatible."
+        ]
+      },
+      "synthesis": {
+        "encounter_id": "b457b743-78d9-4522-a490-1f1c3091f16e",
+        "status": "complete",
+        "synthesis_version": "0.1.0",
+        "problems_processed": 4,
+        "problem_fields_updated": 0,
+        "evidence_links_created": 2,
+        "problems": [
+          {
+            "problem_id": "1ea89362-9c24-4650-80f7-0e5d9c7aa841",
+            "name": "acute hypoxemic respiratory failure",
+            "normalized_name": "acute_hypoxemic_respiratory_failure",
+            "certainty": "confirmed",
+            "status": "improving",
+            "acuity_rank": 18,
+            "trajectory_basis": "oxygen_support_decreasing",
+            "evidence_fact_ids": [
+              "440877fe-1c02-4c09-9c2b-0c287f25b965"
+            ],
+            "physician_approved": false
+          },
+          {
+            "problem_id": "3d3d7e00-b836-4daf-9f49-0cdbe3645b75",
+            "name": "Acute kidney injury",
+            "normalized_name": "acute_kidney_injury",
+            "certainty": "confirmed",
+            "status": "improving",
+            "acuity_rank": 48,
+            "trajectory_basis": "creatinine_falling",
+            "evidence_fact_ids": [
+              "ba839589-143d-4ffa-abcd-a271b9c23ad5"
+            ],
+            "physician_approved": false
+          },
+          {
+            "problem_id": "cb497a54-ca1d-43af-8e13-3c6e41bd8273",
+            "name": "pneumonia",
+            "normalized_name": "pneumonia",
+            "certainty": "confirmed",
+            "status": "improving",
+            "acuity_rank": 68,
+            "trajectory_basis": null,
+            "evidence_fact_ids": [],
+            "physician_approved": false
+          },
+          {
+            "problem_id": "de9d63ea-f700-4a08-9e2c-4b9a5561cce6",
+            "name": "Atrial fibrillation",
+            "normalized_name": "atrial_fibrillation",
+            "certainty": "confirmed",
+            "status": "active",
+            "acuity_rank": 70,
+            "trajectory_basis": null,
+            "evidence_fact_ids": [],
+            "physician_approved": false
+          }
+        ],
+        "rules": [
+          "Synthesis never creates a diagnosis from a lab or vital trend alone.",
+          "Diagnostic certainty is preserved exactly; synthesis does not promote possible/suspected diagnoses.",
+          "Only conservative problem-to-trajectory mappings are enabled in v0.1.",
+          "Acuity rank is a default synthesis priority and is not physician approval.",
+          "Objective evidence links remain traceable to current MCIF facts."
+        ]
+      },
+      "limitations": [
+        "Extraction remains conservative and deterministic for the Step 41 pilot scaffold.",
+        "Only explicit home-medication, exam, therapy/disposition, and final-result language is structured; ambiguous statements remain unstructured rather than guessed.",
+        "No autonomous clinical decisions are created or physician-confirmed."
+      ]
+    }
+  ],
+  "safety_trap": {
+    "unsafe_medication_conflict_caught": true,
+    "unsafe_audit_blocking_flags": 1,
+    "post_correction_blocking_flags": 0
+  },
+  "document_finalization": {
+    "hp": "finalized",
+    "progress": "finalized",
+    "signout": "finalized",
+    "discharge": "finalized"
+  },
+  "final_audits": {
+    "hp": 0,
+    "signout": 0,
+    "discharge": 0,
+    "discharge_categories": []
+  },
+  "quality": {
+    "checks": [
+      {
+        "name": "problem:pneumonia",
+        "passed": true,
+        "observed": "improving",
+        "expected": "improving"
+      },
+      {
+        "name": "problem:acute_hypoxemic_respiratory_failure",
+        "passed": true,
+        "observed": "improving",
+        "expected": "improving"
+      },
+      {
+        "name": "problem:acute_kidney_injury",
+        "passed": true,
+        "observed": "improving",
+        "expected": "improving"
+      },
+      {
+        "name": "problem:atrial_fibrillation",
+        "passed": true,
+        "observed": "active",
+        "expected": "active"
+      },
+      {
+        "name": "lab:creatinine",
+        "passed": true,
+        "observed": 1.2,
+        "expected": 1.2
+      },
+      {
+        "name": "lab:bun",
+        "passed": true,
+        "observed": 24.0,
+        "expected": 24.0
+      },
+      {
+        "name": "lab:sodium",
+        "passed": true,
+        "observed": 137.0,
+        "expected": 137.0
+      },
+      {
+        "name": "lab:potassium",
+        "passed": true,
+        "observed": 4.1,
+        "expected": 4.1
+      },
+      {
+        "name": "lab:wbc",
+        "passed": true,
+        "observed": 8.4,
+        "expected": 8.4
+      },
+      {
+        "name": "lab:hemoglobin",
+        "passed": true,
+        "observed": 11.5,
+        "expected": 11.5
+      },
+      {
+        "name": "med:losartan",
+        "passed": true,
+        "observed": "stop",
+        "expected": "stop"
+      },
+      {
+        "name": "med:apixaban",
+        "passed": true,
+        "observed": "continue",
+        "expected": "continue"
+      },
+      {
+        "name": "destination",
+        "passed": true,
+        "observed": "home with home health",
+        "expected": "home with home health"
+      },
+      {
+        "name": "pending_count",
+        "passed": true,
+        "observed": 0,
+        "expected": 0
+      },
+      {
+        "name": "must_not_claim:sepsis",
+        "passed": true,
+        "observed": false,
+        "expected": false
+      },
+      {
+        "name": "must_not_claim:encephalopathy",
+        "passed": true,
+        "observed": false,
+        "expected": false
+      },
+      {
+        "name": "must_not_claim:acute blood loss anemia",
+        "passed": true,
+        "observed": false,
+        "expected": false
+      },
+      {
+        "name": "must_not_claim:appointment scheduled",
+        "passed": true,
+        "observed": false,
+        "expected": false
+      },
+      {
+        "name": "must_not_claim:prescriptions sent",
+        "passed": true,
+        "observed": false,
+        "expected": false
+      }
+    ],
+    "passed": 19,
+    "total": 19,
+    "accuracy": 1.0
+  },
+  "physician_edit_events": 37,
+  "limitations": [
+    "Current v0.1 Golden Case uses deterministic extraction/document generation; no external LLM inference was invoked.",
+    "Step 41 Golden Case uses source-text ingestion for disposition/PT, physical exam, home medication state, and pending-result lifecycle resolution; no manual structured augmentation is used for those domains.",
+    "Clinical quality is measured against synthetic ground truth and does not establish clinical validation."
+  ]
+}

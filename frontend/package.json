@@ -1,0 +1,9 @@
+{
+  "name": "medinote-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "http-server . -p 5173 -c-1",
+    "start": "http-server . -p 5173 -c-1"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "format": "MediNote minimal SBOM",
+  "components": [
+    {
+      "name": "fastapi",
+      "version": "0.128.2",
+      "license": "UNKNOWN",
+      "source": "backend/requirements.txt"
+    },
+    {
+      "name": "uvicorn",
+      "version": "0.48.0",
+      "license": "UNKNOWN",
+      "source": "backend/requirements.txt"
+    },
+    {
+      "name": "SQLAlchemy",
+      "version": "2.0.50",
+      "license": "MIT",
+      "source": "backend/requirements.txt"
+    },
+    {
+      "name": "psycopg",
+      "version": "3.2.9",
+      "license": "UNKNOWN",
+      "source": "backend/requirements.txt"
+    },
+    {
+      "name": "pydantic",
+      "version": "2.13.4",
+      "license": "UNKNOWN",
+      "source": "backend/requirements.txt"
+    },
+    {
+      "name": "pydantic-settings",
+      "version": "2.14.1",
+      "license": "UNKNOWN",
+      "source": "backend/requirements.txt"
+    },
+    {
+      "name": "pytest",
+      "version": "9.0.2",
+      "license": "UNKNOWN",
+      "source": "backend/requirements.txt"
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1",
+      "license": "BSD-3-Clause",
+      "source": "backend/requirements.txt"
+    },
+    {
+      "name": "cryptography",
+      "version": "46.0.4",
+      "license": "UNKNOWN",
+      "source": "backend/requirements.txt"
+    }
+  ]
+}

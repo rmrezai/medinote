@@ -1,0 +1,90 @@
+{
+  "step": "42",
+  "test": "multi_day_chart_ingestion_torture",
+  "synthetic_deidentified": true,
+  "source_documents": 12,
+  "analysis_runs": 12,
+  "checks": [
+    {
+      "name": "current oxygen is room air",
+      "passed": true
+    },
+    {
+      "name": "sepsis remains ruled out",
+      "passed": true
+    },
+    {
+      "name": "duplicate losartan normalized",
+      "passed": true
+    },
+    {
+      "name": "consultant conflict preserved",
+      "passed": true
+    },
+    {
+      "name": "consultant contradiction created",
+      "passed": true
+    },
+    {
+      "name": "biopsy remains cancelled",
+      "passed": true
+    },
+    {
+      "name": "amended creatinine is current",
+      "passed": true
+    },
+    {
+      "name": "blood cultures no longer pending",
+      "passed": true
+    },
+    {
+      "name": "latest disposition wins",
+      "passed": true
+    },
+    {
+      "name": "late old documentation does not override current state",
+      "passed": true
+    }
+  ],
+  "passed": 10,
+  "total": 10,
+  "accuracy": 1.0,
+  "unresolved_contradictions": [
+    {
+      "category": "consultant_recommendation_conflict",
+      "severity": "high",
+      "description": "Conflicting consultant recommendations for furosemide: Cardiology says continue; Nephrology says hold."
+    },
+    {
+      "category": "temporal_fact_conflict",
+      "severity": "high",
+      "description": "Conflicting oxygen_support values at 2026-08-19T10:00:00: room_air vs 4.0."
+    }
+  ],
+  "progress_audit": {
+    "status": "review_required",
+    "blocking_flags": 2,
+    "categories": [
+      "unresolved_contradiction",
+      "unresolved_contradiction",
+      "temporal_conflict"
+    ]
+  },
+  "signout_audit": {
+    "status": "review_required",
+    "blocking_flags": 2,
+    "categories": [
+      "unresolved_contradiction",
+      "unresolved_contradiction",
+      "temporal_conflict",
+      "temporal_conflict"
+    ]
+  },
+  "expected_review_behavior": "Consultant disagreement remains unresolved and should require physician review rather than silent auto-resolution.",
+  "runtime_seconds": 0.306,
+  "limitations": [
+    "Deterministic synthetic torture test; does not establish clinical validation.",
+    "Consultant conflict detection currently targets explicit opposing action/medication language.",
+    "Ruled-out diagnosis tombstone is deliberately conservative and requires future explicit recurrence logic."
+  ]
+}

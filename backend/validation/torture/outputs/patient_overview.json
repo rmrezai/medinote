@@ -1,0 +1,183 @@
+{
+  "encounter_id": "11dd5665-18fd-421d-bb2a-e8dd1c33ed9e",
+  "patient_id": "cb5a39a2-a087-485e-9e63-750bba7a0975",
+  "patient_display_name": "Synthetic Torture",
+  "mrn": "TORTURE-001",
+  "service": "Hospital Medicine",
+  "location": null,
+  "admission_datetime": "2026-08-18 08:00:00",
+  "encounter_status": "active",
+  "current_clinical_picture": "Active inpatient picture: Acute kidney injury - improving; Pneumonia - improving. Review: 2 unresolved contradictions.",
+  "problems": [
+    {
+      "id": "5472bc43-e2e6-4606-b290-dbacd068cfbf",
+      "name": "Acute kidney injury",
+      "normalized_name": "acute_kidney_injury",
+      "certainty": "confirmed",
+      "status": "improving",
+      "acuity_rank": 48,
+      "physician_approved": false,
+      "evidence": [
+        {
+          "fact_id": "89353915-52ec-44bc-b8fa-6892deb7e12a",
+          "concept": "creatinine",
+          "value": "2.0 mg/dL",
+          "units": "mg/dL",
+          "observed_datetime": "2026-08-18 12:00:00",
+          "confidence": "high",
+          "source_document_id": "f6139201-2715-4d92-8a69-d08cb2b6e941",
+          "relationship": "trajectory_support",
+          "evidence_strength": "supporting"
+        },
+        {
+          "fact_id": "547028e4-b686-4969-aa8c-0c875089e6be",
+          "concept": "creatinine",
+          "value": "1.4 mg/dL",
+          "units": "mg/dL",
+          "observed_datetime": "2026-08-20 06:00:00",
+          "confidence": "high",
+          "source_document_id": "6f3a0594-644a-4911-bc69-3790fc6a85fc",
+          "relationship": "trajectory_support",
+          "evidence_strength": "supporting"
+        },
+        {
+          "fact_id": "ad5f9e59-1ce6-4b15-8351-864f679ccf8b",
+          "concept": "creatinine",
+          "value": "1.2 mg/dL",
+          "units": "mg/dL",
+          "observed_datetime": "2026-08-20 07:00:00",
+          "confidence": "high",
+          "source_document_id": "e27a7fd1-58de-4c4f-93d0-7e7c383b9238",
+          "relationship": "trajectory_support",
+          "evidence_strength": "supporting"
+        }
+      ]
+    },
+    {
+      "id": "ce193209-e189-44a3-b08f-cac41d9353ef",
+      "name": "Pneumonia",
+      "normalized_name": "pneumonia",
+      "certainty": "confirmed",
+      "status": "improving",
+      "acuity_rank": 68,
+      "physician_approved": false,
+      "evidence": []
+    }
+  ],
+  "latest_labs": [
+    {
+      "id": "f80017c4-11a5-4a14-8438-5603a0098a7d",
+      "test_name": "creatinine",
+      "value_numeric": 1.2,
+      "value_text": null,
+      "units": "mg/dL",
+      "abnormal_flag": null,
+      "collection_datetime": "2026-08-20 07:00:00",
+      "trend": "falling",
+      "earliest_value": "2.5",
+      "latest_value": "1.2"
+    }
+  ],
+  "medications": [
+    {
+      "id": "a7a88d17-b8e1-44c7-9f2f-d1be2219cd3f",
+      "name": "apixaban",
+      "normalized_name": "apixaban",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "indication": null,
+      "states": [
+        {
+          "domain": "home",
+          "status": "active",
+          "effective_datetime": "2026-08-18 08:00:00",
+          "reason": null,
+          "restart_criteria": null,
+          "physician_confirmed": false
+        }
+      ],
+      "unresolved": false
+    },
+    {
+      "id": "271e9109-0119-4e28-b578-23cafac703a8",
+      "name": "losartan 50 mg daily",
+      "normalized_name": "losartan",
+      "dose": null,
+      "route": null,
+      "frequency": null,
+      "indication": null,
+      "states": [
+        {
+          "domain": "home",
+          "status": "active",
+          "effective_datetime": "2026-08-18 08:00:00",
+          "reason": null,
+          "restart_criteria": null,
+          "physician_confirmed": false
+        }
+      ],
+      "unresolved": false
+    }
+  ],
+  "consultants": [
+    {
+      "id": "ccd2bd6c-d389-4f40-b543-d4fde06b5ac0",
+      "service": "Cardiology",
+      "consultant_name": null,
+      "recommendation_datetime": "2026-08-19 09:00:00",
+      "assessment": null,
+      "recommendation": "continue furosemide",
+      "implementation_status": "unclear",
+      "conflict_status": "conflict"
+    },
+    {
+      "id": "04d6478a-90a9-475f-aa07-c4ceed86909d",
+      "service": "Nephrology",
+      "consultant_name": null,
+      "recommendation_datetime": "2026-08-19 09:00:00",
+      "assessment": null,
+      "recommendation": "hold furosemide",
+      "implementation_status": "unclear",
+      "conflict_status": "conflict"
+    }
+  ],
+  "pending_items": [],
+  "disposition": {
+    "anticipated_destination": "home with home health",
+    "current_barriers": null,
+    "mobility_status": "Ambulates 150 feet with rolling walker and supervision",
+    "pt_recommendation": "home with home health",
+    "ot_recommendation": null,
+    "slp_recommendation": null,
+    "oxygen_need": null,
+    "authorization_status": null
+  },
+  "contradictions": [
+    {
+      "id": "293520c5-f1ec-43f6-ac2b-993f91030605",
+      "category": "consultant_recommendation_conflict",
+      "description": "Conflicting consultant recommendations for furosemide: Cardiology says continue; Nephrology says hold.",
+      "severity": "high",
+      "status": "unresolved",
+      "fact_a_id": null,
+      "fact_b_id": null
+    },
+    {
+      "id": "03e4dfdc-167c-43b8-8786-bfeefd3ff85b",
+      "category": "temporal_fact_conflict",
+      "description": "Conflicting oxygen_support values at 2026-08-19T10:00:00: room_air vs 4.0.",
+      "severity": "high",
+      "status": "unresolved",
+      "fact_a_id": "e3cb792d-7698-4c61-bc77-b9ec95cf3545",
+      "fact_b_id": "5d2af8e4-6418-4b3d-9c89-b9425a981706"
+    }
+  ],
+  "attention_counts": {
+    "active_problems": 2,
+    "pending_items": 0,
+    "unresolved_contradictions": 2,
+    "high_severity_contradictions": 2,
+    "unresolved_medications": 0
+  }
+}

@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.pilot.example
+openai-api-key.txt
+*.key
+*.pem
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store

@@ -1,0 +1,26 @@
+MEDINOTE PILOT 001 — MAC QUICK START
+
+1. Install Docker Desktop for Mac:
+   https://www.docker.com/products/docker-desktop/
+
+2. Start Docker Desktop once and accept its setup prompts.
+
+3. Double-click:
+   Start MediNote.command
+
+4. MediNote opens automatically at:
+   http://127.0.0.1:5173
+
+5. On the first launch, use "First-time pilot setup" to create the local administrator account.
+
+6. When finished, double-click:
+   Stop MediNote.command
+
+If macOS warns that a .command file cannot be opened:
+- Control-click the file, choose Open, then choose Open again.
+- These launcher scripts are plain-text shell scripts included in this folder; they are not Apple-signed applications.
+
+IMPORTANT
+- This package is for synthetic/de-identified Pilot 001 testing.
+- Do not enter real patient PHI until the controlled PHI deployment requirements are completed and institutionally approved.
+- The local database is preserved between starts unless you explicitly run Reset MediNote Data.command.

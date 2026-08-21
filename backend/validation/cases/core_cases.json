@@ -1,0 +1,1904 @@
+[
+  {
+    "slug": "aki-med-hold",
+    "title": "AKI with antihypertensive hold",
+    "category": "AKI",
+    "source_text": "De-identified synthetic case: documented AKI; creatinine 2.8 then 1.4. Losartan remains held for AKI.",
+    "ground_truth": {
+      "facts": [
+        "creatinine 2.8",
+        "creatinine 1.4"
+      ],
+      "medication_states": [
+        "losartan:hospital:held"
+      ],
+      "diagnostic_certainty": {
+        "acute kidney injury": "confirmed"
+      },
+      "must_not_claim": [
+        "losartan resumed"
+      ]
+    },
+    "module_targets": [
+      "overview",
+      "hp",
+      "progress",
+      "discharge",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "aki"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "pneumonia-hypoxemia",
+    "title": "Pneumonia with improving oxygen need",
+    "category": "Respiratory",
+    "source_text": "Synthetic case: pneumonia documented. Oxygen decreased from 4 L NC to 2 L NC. Respiratory failure not documented.",
+    "ground_truth": {
+      "facts": [
+        "oxygen 4 l",
+        "oxygen 2 l"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "pneumonia": "confirmed"
+      },
+      "must_not_claim": [
+        "acute hypoxemic respiratory failure"
+      ]
+    },
+    "module_targets": [
+      "overview",
+      "hp",
+      "progress",
+      "discharge",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "respiratory"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "sepsis-ambiguity",
+    "title": "SIRS without confirmed sepsis",
+    "category": "Sepsis safety",
+    "source_text": "Synthetic case: fever, tachycardia, leukocytosis with possible infection. Sepsis not established.",
+    "ground_truth": {
+      "facts": [
+        "fever",
+        "tachycardia",
+        "leukocytosis"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "infection": "possible"
+      },
+      "must_not_claim": [
+        "sepsis"
+      ]
+    },
+    "module_targets": [
+      "overview",
+      "hp",
+      "progress",
+      "discharge",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "sepsis_safety"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "gi-bleed-anticoag",
+    "title": "GI bleed with anticoagulation held",
+    "category": "Medication safety",
+    "source_text": "Synthetic case: active GI bleeding. Home apixaban present; inpatient apixaban held.",
+    "ground_truth": {
+      "facts": [
+        "gi bleeding"
+      ],
+      "medication_states": [
+        "apixaban:hospital:held"
+      ],
+      "diagnostic_certainty": {
+        "gi bleed": "confirmed"
+      },
+      "must_not_claim": [
+        "apixaban continued",
+        "apixaban resumed"
+      ]
+    },
+    "module_targets": [
+      "overview",
+      "hp",
+      "progress",
+      "discharge",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "medication_safety"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "ams-no-encephalopathy",
+    "title": "Confusion without encephalopathy diagnosis",
+    "category": "Neurologic safety",
+    "source_text": "Synthetic case: patient described as confused. No clinician diagnosis of encephalopathy.",
+    "ground_truth": {
+      "facts": [
+        "confusion"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {},
+      "must_not_claim": [
+        "acute metabolic encephalopathy"
+      ]
+    },
+    "module_targets": [
+      "overview",
+      "hp",
+      "progress",
+      "discharge",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "neurologic_safety"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "anemia-etiology",
+    "title": "Falling hemoglobin without proven blood loss",
+    "category": "Hematology safety",
+    "source_text": "Synthetic case: hemoglobin 9.8 to 7.2. No documented bleeding source or acute blood loss anemia diagnosis.",
+    "ground_truth": {
+      "facts": [
+        "hemoglobin 9.8",
+        "hemoglobin 7.2"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {},
+      "must_not_claim": [
+        "acute blood loss anemia"
+      ]
+    },
+    "module_targets": [
+      "overview",
+      "hp",
+      "progress",
+      "discharge",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "hematology_safety"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "procedure-planned",
+    "title": "Planned procedure not completed",
+    "category": "Procedure safety",
+    "source_text": "Synthetic case: biopsy planned for tomorrow; no procedure completion documented.",
+    "ground_truth": {
+      "facts": [
+        "biopsy planned"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {},
+      "must_not_claim": [
+        "status post biopsy",
+        "biopsy completed"
+      ]
+    },
+    "module_targets": [
+      "overview",
+      "hp",
+      "progress",
+      "discharge",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "procedure_safety"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "culture-preliminary",
+    "title": "Preliminary culture result",
+    "category": "Result finality",
+    "source_text": "Synthetic case: blood culture preliminary with no growth to date; final result unavailable.",
+    "ground_truth": {
+      "facts": [
+        "blood culture preliminary"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {},
+      "must_not_claim": [
+        "blood cultures final negative"
+      ]
+    },
+    "module_targets": [
+      "overview",
+      "hp",
+      "progress",
+      "discharge",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "result_finality"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "disposition-conflict",
+    "title": "Disposition recommendation conflict",
+    "category": "Disposition",
+    "source_text": "Synthetic case: PT recommends SNF; authorization denied; case management is arranging home services.",
+    "ground_truth": {
+      "facts": [
+        "pt recommends snf",
+        "snf authorization denied",
+        "home services being arranged"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {},
+      "must_not_claim": [
+        "discharge to snf confirmed"
+      ]
+    },
+    "module_targets": [
+      "overview",
+      "hp",
+      "progress",
+      "discharge",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "disposition"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "aspiration-risk",
+    "title": "Aspiration risk without pneumonia",
+    "category": "CDI safety",
+    "source_text": "Synthetic case: dysphagia and aspiration risk documented. No aspiration pneumonia diagnosis.",
+    "ground_truth": {
+      "facts": [
+        "dysphagia",
+        "aspiration risk"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {},
+      "must_not_claim": [
+        "aspiration pneumonia"
+      ]
+    },
+    "module_targets": [
+      "overview",
+      "hp",
+      "progress",
+      "discharge",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "cdi_safety"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "hf-diuresis-aki-v1",
+    "title": "Heart failure with AKI and diuretic conflict - Variant 1",
+    "category": "Cardiorenal",
+    "source_text": "De-identified synthetic simulation variant 1: Documented HFrEF exacerbation. Creatinine rises 1.0 to 2.0 during diuresis. Cardiology recommends continued diuresis; nephrology recommends pause. Furosemide current state unclear.",
+    "ground_truth": {
+      "facts": [
+        "creatinine 1.0",
+        "creatinine 2.0",
+        "cardiology continue diuresis",
+        "nephrology pause diuresis"
+      ],
+      "medication_states": [
+        "furosemide:hospital:unclear"
+      ],
+      "diagnostic_certainty": {
+        "heart failure exacerbation": "confirmed"
+      },
+      "must_not_claim": [
+        "consultants agree on continued diuresis"
+      ],
+      "must_flag": [
+        "consultant conflict"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "consultant_conflict",
+      "medication_conflict"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "hf-diuresis-aki-v2",
+    "title": "Heart failure with AKI and diuretic conflict - Variant 2",
+    "category": "Cardiorenal",
+    "source_text": "De-identified synthetic simulation variant 2: Documented HFrEF exacerbation. Creatinine rises 1.0 to 2.0 during diuresis. Cardiology recommends continued diuresis; nephrology recommends pause. Furosemide current state unclear.",
+    "ground_truth": {
+      "facts": [
+        "creatinine 1.0",
+        "creatinine 2.0",
+        "cardiology continue diuresis",
+        "nephrology pause diuresis"
+      ],
+      "medication_states": [
+        "furosemide:hospital:unclear"
+      ],
+      "diagnostic_certainty": {
+        "heart failure exacerbation": "confirmed"
+      },
+      "must_not_claim": [
+        "consultants agree on continued diuresis"
+      ],
+      "must_flag": [
+        "consultant conflict"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "consultant_conflict",
+      "medication_conflict"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "hf-diuresis-aki-v3",
+    "title": "Heart failure with AKI and diuretic conflict - Variant 3",
+    "category": "Cardiorenal",
+    "source_text": "De-identified synthetic simulation variant 3: Documented HFrEF exacerbation. Creatinine rises 1.0 to 2.0 during diuresis. Cardiology recommends continued diuresis; nephrology recommends pause. Furosemide current state unclear.",
+    "ground_truth": {
+      "facts": [
+        "creatinine 1.0",
+        "creatinine 2.0",
+        "cardiology continue diuresis",
+        "nephrology pause diuresis"
+      ],
+      "medication_states": [
+        "furosemide:hospital:unclear"
+      ],
+      "diagnostic_certainty": {
+        "heart failure exacerbation": "confirmed"
+      },
+      "must_not_claim": [
+        "consultants agree on continued diuresis"
+      ],
+      "must_flag": [
+        "consultant conflict"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "consultant_conflict",
+      "medication_conflict"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "hf-diuresis-aki-v4",
+    "title": "Heart failure with AKI and diuretic conflict - Variant 4",
+    "category": "Cardiorenal",
+    "source_text": "De-identified synthetic simulation variant 4: Documented HFrEF exacerbation. Creatinine rises 1.0 to 2.0 during diuresis. Cardiology recommends continued diuresis; nephrology recommends pause. Furosemide current state unclear.",
+    "ground_truth": {
+      "facts": [
+        "creatinine 1.0",
+        "creatinine 2.0",
+        "cardiology continue diuresis",
+        "nephrology pause diuresis"
+      ],
+      "medication_states": [
+        "furosemide:hospital:unclear"
+      ],
+      "diagnostic_certainty": {
+        "heart failure exacerbation": "confirmed"
+      },
+      "must_not_claim": [
+        "consultants agree on continued diuresis"
+      ],
+      "must_flag": [
+        "consultant conflict"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "consultant_conflict",
+      "medication_conflict"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "hf-diuresis-aki-v5",
+    "title": "Heart failure with AKI and diuretic conflict - Variant 5",
+    "category": "Cardiorenal",
+    "source_text": "De-identified synthetic simulation variant 5: Documented HFrEF exacerbation. Creatinine rises 1.0 to 2.0 during diuresis. Cardiology recommends continued diuresis; nephrology recommends pause. Furosemide current state unclear.",
+    "ground_truth": {
+      "facts": [
+        "creatinine 1.0",
+        "creatinine 2.0",
+        "cardiology continue diuresis",
+        "nephrology pause diuresis"
+      ],
+      "medication_states": [
+        "furosemide:hospital:unclear"
+      ],
+      "diagnostic_certainty": {
+        "heart failure exacerbation": "confirmed"
+      },
+      "must_not_claim": [
+        "consultants agree on continued diuresis"
+      ],
+      "must_flag": [
+        "consultant conflict"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "signout"
+    ],
+    "hazard_tags": [
+      "consultant_conflict",
+      "medication_conflict"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "steroid-hyperglycemia-v1",
+    "title": "Steroid-associated hyperglycemia - Variant 1",
+    "category": "Diabetes",
+    "source_text": "De-identified synthetic simulation variant 1: Patient on high-dose steroids with glucose 280-340. Basal insulin increased; home metformin held during acute illness.",
+    "ground_truth": {
+      "facts": [
+        "glucose 280",
+        "glucose 340"
+      ],
+      "medication_states": [
+        "metformin:hospital:held",
+        "insulin:hospital:adjusted"
+      ],
+      "diagnostic_certainty": {
+        "hyperglycemia": "confirmed"
+      },
+      "must_not_claim": [
+        "metformin continued"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "high_risk_medication"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "steroid-hyperglycemia-v2",
+    "title": "Steroid-associated hyperglycemia - Variant 2",
+    "category": "Diabetes",
+    "source_text": "De-identified synthetic simulation variant 2: Patient on high-dose steroids with glucose 280-340. Basal insulin increased; home metformin held during acute illness.",
+    "ground_truth": {
+      "facts": [
+        "glucose 280",
+        "glucose 340"
+      ],
+      "medication_states": [
+        "metformin:hospital:held",
+        "insulin:hospital:adjusted"
+      ],
+      "diagnostic_certainty": {
+        "hyperglycemia": "confirmed"
+      },
+      "must_not_claim": [
+        "metformin continued"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "high_risk_medication"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "steroid-hyperglycemia-v3",
+    "title": "Steroid-associated hyperglycemia - Variant 3",
+    "category": "Diabetes",
+    "source_text": "De-identified synthetic simulation variant 3: Patient on high-dose steroids with glucose 280-340. Basal insulin increased; home metformin held during acute illness.",
+    "ground_truth": {
+      "facts": [
+        "glucose 280",
+        "glucose 340"
+      ],
+      "medication_states": [
+        "metformin:hospital:held",
+        "insulin:hospital:adjusted"
+      ],
+      "diagnostic_certainty": {
+        "hyperglycemia": "confirmed"
+      },
+      "must_not_claim": [
+        "metformin continued"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "high_risk_medication"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "steroid-hyperglycemia-v4",
+    "title": "Steroid-associated hyperglycemia - Variant 4",
+    "category": "Diabetes",
+    "source_text": "De-identified synthetic simulation variant 4: Patient on high-dose steroids with glucose 280-340. Basal insulin increased; home metformin held during acute illness.",
+    "ground_truth": {
+      "facts": [
+        "glucose 280",
+        "glucose 340"
+      ],
+      "medication_states": [
+        "metformin:hospital:held",
+        "insulin:hospital:adjusted"
+      ],
+      "diagnostic_certainty": {
+        "hyperglycemia": "confirmed"
+      },
+      "must_not_claim": [
+        "metformin continued"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "high_risk_medication"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "steroid-hyperglycemia-v5",
+    "title": "Steroid-associated hyperglycemia - Variant 5",
+    "category": "Diabetes",
+    "source_text": "De-identified synthetic simulation variant 5: Patient on high-dose steroids with glucose 280-340. Basal insulin increased; home metformin held during acute illness.",
+    "ground_truth": {
+      "facts": [
+        "glucose 280",
+        "glucose 340"
+      ],
+      "medication_states": [
+        "metformin:hospital:held",
+        "insulin:hospital:adjusted"
+      ],
+      "diagnostic_certainty": {
+        "hyperglycemia": "confirmed"
+      },
+      "must_not_claim": [
+        "metformin continued"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "high_risk_medication"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "af-rvr-anticoag-v1",
+    "title": "Atrial fibrillation with RVR and anticoagulation ambiguity - Variant 1",
+    "category": "Cardiology",
+    "source_text": "De-identified synthetic simulation variant 1: AF with RVR documented. Apixaban home medication. Apixaban held for procedure; restart decision not documented.",
+    "ground_truth": {
+      "facts": [
+        "atrial fibrillation with rvr"
+      ],
+      "medication_states": [
+        "apixaban:hospital:held",
+        "apixaban:discharge:requires_decision"
+      ],
+      "diagnostic_certainty": {
+        "atrial fibrillation with rvr": "confirmed"
+      },
+      "must_not_claim": [
+        "apixaban resumed"
+      ],
+      "must_flag": [
+        "unresolved discharge medication"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "anticoagulation",
+      "procedure"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "af-rvr-anticoag-v2",
+    "title": "Atrial fibrillation with RVR and anticoagulation ambiguity - Variant 2",
+    "category": "Cardiology",
+    "source_text": "De-identified synthetic simulation variant 2: AF with RVR documented. Apixaban home medication. Apixaban held for procedure; restart decision not documented.",
+    "ground_truth": {
+      "facts": [
+        "atrial fibrillation with rvr"
+      ],
+      "medication_states": [
+        "apixaban:hospital:held",
+        "apixaban:discharge:requires_decision"
+      ],
+      "diagnostic_certainty": {
+        "atrial fibrillation with rvr": "confirmed"
+      },
+      "must_not_claim": [
+        "apixaban resumed"
+      ],
+      "must_flag": [
+        "unresolved discharge medication"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "anticoagulation",
+      "procedure"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "af-rvr-anticoag-v3",
+    "title": "Atrial fibrillation with RVR and anticoagulation ambiguity - Variant 3",
+    "category": "Cardiology",
+    "source_text": "De-identified synthetic simulation variant 3: AF with RVR documented. Apixaban home medication. Apixaban held for procedure; restart decision not documented.",
+    "ground_truth": {
+      "facts": [
+        "atrial fibrillation with rvr"
+      ],
+      "medication_states": [
+        "apixaban:hospital:held",
+        "apixaban:discharge:requires_decision"
+      ],
+      "diagnostic_certainty": {
+        "atrial fibrillation with rvr": "confirmed"
+      },
+      "must_not_claim": [
+        "apixaban resumed"
+      ],
+      "must_flag": [
+        "unresolved discharge medication"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "anticoagulation",
+      "procedure"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "af-rvr-anticoag-v4",
+    "title": "Atrial fibrillation with RVR and anticoagulation ambiguity - Variant 4",
+    "category": "Cardiology",
+    "source_text": "De-identified synthetic simulation variant 4: AF with RVR documented. Apixaban home medication. Apixaban held for procedure; restart decision not documented.",
+    "ground_truth": {
+      "facts": [
+        "atrial fibrillation with rvr"
+      ],
+      "medication_states": [
+        "apixaban:hospital:held",
+        "apixaban:discharge:requires_decision"
+      ],
+      "diagnostic_certainty": {
+        "atrial fibrillation with rvr": "confirmed"
+      },
+      "must_not_claim": [
+        "apixaban resumed"
+      ],
+      "must_flag": [
+        "unresolved discharge medication"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "anticoagulation",
+      "procedure"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "af-rvr-anticoag-v5",
+    "title": "Atrial fibrillation with RVR and anticoagulation ambiguity - Variant 5",
+    "category": "Cardiology",
+    "source_text": "De-identified synthetic simulation variant 5: AF with RVR documented. Apixaban home medication. Apixaban held for procedure; restart decision not documented.",
+    "ground_truth": {
+      "facts": [
+        "atrial fibrillation with rvr"
+      ],
+      "medication_states": [
+        "apixaban:hospital:held",
+        "apixaban:discharge:requires_decision"
+      ],
+      "diagnostic_certainty": {
+        "atrial fibrillation with rvr": "confirmed"
+      },
+      "must_not_claim": [
+        "apixaban resumed"
+      ],
+      "must_flag": [
+        "unresolved discharge medication"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "anticoagulation",
+      "procedure"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "hyponatremia-correction-v1",
+    "title": "Hyponatremia correction without invented cause - Variant 1",
+    "category": "Electrolyte",
+    "source_text": "De-identified synthetic simulation variant 1: Sodium 121 then 128 then 133. Etiology not established in supplied record.",
+    "ground_truth": {
+      "facts": [
+        "sodium 121",
+        "sodium 128",
+        "sodium 133"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "hyponatremia": "confirmed"
+      },
+      "must_not_claim": [
+        "siadh"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "etiology_overcall"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "hyponatremia-correction-v2",
+    "title": "Hyponatremia correction without invented cause - Variant 2",
+    "category": "Electrolyte",
+    "source_text": "De-identified synthetic simulation variant 2: Sodium 121 then 128 then 133. Etiology not established in supplied record.",
+    "ground_truth": {
+      "facts": [
+        "sodium 121",
+        "sodium 128",
+        "sodium 133"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "hyponatremia": "confirmed"
+      },
+      "must_not_claim": [
+        "siadh"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "etiology_overcall"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "hyponatremia-correction-v3",
+    "title": "Hyponatremia correction without invented cause - Variant 3",
+    "category": "Electrolyte",
+    "source_text": "De-identified synthetic simulation variant 3: Sodium 121 then 128 then 133. Etiology not established in supplied record.",
+    "ground_truth": {
+      "facts": [
+        "sodium 121",
+        "sodium 128",
+        "sodium 133"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "hyponatremia": "confirmed"
+      },
+      "must_not_claim": [
+        "siadh"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "etiology_overcall"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "hyponatremia-correction-v4",
+    "title": "Hyponatremia correction without invented cause - Variant 4",
+    "category": "Electrolyte",
+    "source_text": "De-identified synthetic simulation variant 4: Sodium 121 then 128 then 133. Etiology not established in supplied record.",
+    "ground_truth": {
+      "facts": [
+        "sodium 121",
+        "sodium 128",
+        "sodium 133"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "hyponatremia": "confirmed"
+      },
+      "must_not_claim": [
+        "siadh"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "etiology_overcall"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "hyponatremia-correction-v5",
+    "title": "Hyponatremia correction without invented cause - Variant 5",
+    "category": "Electrolyte",
+    "source_text": "De-identified synthetic simulation variant 5: Sodium 121 then 128 then 133. Etiology not established in supplied record.",
+    "ground_truth": {
+      "facts": [
+        "sodium 121",
+        "sodium 128",
+        "sodium 133"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "hyponatremia": "confirmed"
+      },
+      "must_not_claim": [
+        "siadh"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "etiology_overcall"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "aki-baseline-unknown-v1",
+    "title": "AKI documented but baseline unknown - Variant 1",
+    "category": "AKI",
+    "source_text": "De-identified synthetic simulation variant 1: Clinician documents AKI. Creatinine 2.1 today. No prior baseline creatinine supplied.",
+    "ground_truth": {
+      "facts": [
+        "creatinine 2.1"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "acute kidney injury": "confirmed"
+      },
+      "must_not_claim": [
+        "baseline creatinine 1.0",
+        "aki resolved"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress"
+    ],
+    "hazard_tags": [
+      "missing_baseline"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "aki-baseline-unknown-v2",
+    "title": "AKI documented but baseline unknown - Variant 2",
+    "category": "AKI",
+    "source_text": "De-identified synthetic simulation variant 2: Clinician documents AKI. Creatinine 2.1 today. No prior baseline creatinine supplied.",
+    "ground_truth": {
+      "facts": [
+        "creatinine 2.1"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "acute kidney injury": "confirmed"
+      },
+      "must_not_claim": [
+        "baseline creatinine 1.0",
+        "aki resolved"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress"
+    ],
+    "hazard_tags": [
+      "missing_baseline"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "aki-baseline-unknown-v3",
+    "title": "AKI documented but baseline unknown - Variant 3",
+    "category": "AKI",
+    "source_text": "De-identified synthetic simulation variant 3: Clinician documents AKI. Creatinine 2.1 today. No prior baseline creatinine supplied.",
+    "ground_truth": {
+      "facts": [
+        "creatinine 2.1"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "acute kidney injury": "confirmed"
+      },
+      "must_not_claim": [
+        "baseline creatinine 1.0",
+        "aki resolved"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress"
+    ],
+    "hazard_tags": [
+      "missing_baseline"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "aki-baseline-unknown-v4",
+    "title": "AKI documented but baseline unknown - Variant 4",
+    "category": "AKI",
+    "source_text": "De-identified synthetic simulation variant 4: Clinician documents AKI. Creatinine 2.1 today. No prior baseline creatinine supplied.",
+    "ground_truth": {
+      "facts": [
+        "creatinine 2.1"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "acute kidney injury": "confirmed"
+      },
+      "must_not_claim": [
+        "baseline creatinine 1.0",
+        "aki resolved"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress"
+    ],
+    "hazard_tags": [
+      "missing_baseline"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "aki-baseline-unknown-v5",
+    "title": "AKI documented but baseline unknown - Variant 5",
+    "category": "AKI",
+    "source_text": "De-identified synthetic simulation variant 5: Clinician documents AKI. Creatinine 2.1 today. No prior baseline creatinine supplied.",
+    "ground_truth": {
+      "facts": [
+        "creatinine 2.1"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "acute kidney injury": "confirmed"
+      },
+      "must_not_claim": [
+        "baseline creatinine 1.0",
+        "aki resolved"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress"
+    ],
+    "hazard_tags": [
+      "missing_baseline"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "uti-asymptomatic-v1",
+    "title": "Positive urine culture without symptomatic UTI - Variant 1",
+    "category": "Infectious disease",
+    "source_text": "De-identified synthetic simulation variant 1: Urine culture grows E. coli. No urinary symptoms documented. Clinician notes asymptomatic bacteriuria.",
+    "ground_truth": {
+      "facts": [
+        "urine culture e coli"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "asymptomatic bacteriuria": "confirmed"
+      },
+      "must_not_claim": [
+        "urinary tract infection"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "diagnostic_overcall"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "uti-asymptomatic-v2",
+    "title": "Positive urine culture without symptomatic UTI - Variant 2",
+    "category": "Infectious disease",
+    "source_text": "De-identified synthetic simulation variant 2: Urine culture grows E. coli. No urinary symptoms documented. Clinician notes asymptomatic bacteriuria.",
+    "ground_truth": {
+      "facts": [
+        "urine culture e coli"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "asymptomatic bacteriuria": "confirmed"
+      },
+      "must_not_claim": [
+        "urinary tract infection"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "diagnostic_overcall"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "uti-asymptomatic-v3",
+    "title": "Positive urine culture without symptomatic UTI - Variant 3",
+    "category": "Infectious disease",
+    "source_text": "De-identified synthetic simulation variant 3: Urine culture grows E. coli. No urinary symptoms documented. Clinician notes asymptomatic bacteriuria.",
+    "ground_truth": {
+      "facts": [
+        "urine culture e coli"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "asymptomatic bacteriuria": "confirmed"
+      },
+      "must_not_claim": [
+        "urinary tract infection"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "diagnostic_overcall"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "uti-asymptomatic-v4",
+    "title": "Positive urine culture without symptomatic UTI - Variant 4",
+    "category": "Infectious disease",
+    "source_text": "De-identified synthetic simulation variant 4: Urine culture grows E. coli. No urinary symptoms documented. Clinician notes asymptomatic bacteriuria.",
+    "ground_truth": {
+      "facts": [
+        "urine culture e coli"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "asymptomatic bacteriuria": "confirmed"
+      },
+      "must_not_claim": [
+        "urinary tract infection"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "diagnostic_overcall"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "uti-asymptomatic-v5",
+    "title": "Positive urine culture without symptomatic UTI - Variant 5",
+    "category": "Infectious disease",
+    "source_text": "De-identified synthetic simulation variant 5: Urine culture grows E. coli. No urinary symptoms documented. Clinician notes asymptomatic bacteriuria.",
+    "ground_truth": {
+      "facts": [
+        "urine culture e coli"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "asymptomatic bacteriuria": "confirmed"
+      },
+      "must_not_claim": [
+        "urinary tract infection"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "diagnostic_overcall"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "troponin-demand-v1",
+    "title": "Troponin elevation without type 1 MI - Variant 1",
+    "category": "Cardiology",
+    "source_text": "De-identified synthetic simulation variant 1: Troponin mildly elevated and flat. Cardiology documents myocardial injury/demand context; no STEMI/NSTEMI diagnosis.",
+    "ground_truth": {
+      "facts": [
+        "troponin elevated"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "myocardial injury": "confirmed"
+      },
+      "must_not_claim": [
+        "nstemi",
+        "acute myocardial infarction"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "diagnostic_overcall"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "troponin-demand-v2",
+    "title": "Troponin elevation without type 1 MI - Variant 2",
+    "category": "Cardiology",
+    "source_text": "De-identified synthetic simulation variant 2: Troponin mildly elevated and flat. Cardiology documents myocardial injury/demand context; no STEMI/NSTEMI diagnosis.",
+    "ground_truth": {
+      "facts": [
+        "troponin elevated"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "myocardial injury": "confirmed"
+      },
+      "must_not_claim": [
+        "nstemi",
+        "acute myocardial infarction"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "diagnostic_overcall"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "troponin-demand-v3",
+    "title": "Troponin elevation without type 1 MI - Variant 3",
+    "category": "Cardiology",
+    "source_text": "De-identified synthetic simulation variant 3: Troponin mildly elevated and flat. Cardiology documents myocardial injury/demand context; no STEMI/NSTEMI diagnosis.",
+    "ground_truth": {
+      "facts": [
+        "troponin elevated"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "myocardial injury": "confirmed"
+      },
+      "must_not_claim": [
+        "nstemi",
+        "acute myocardial infarction"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "diagnostic_overcall"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "troponin-demand-v4",
+    "title": "Troponin elevation without type 1 MI - Variant 4",
+    "category": "Cardiology",
+    "source_text": "De-identified synthetic simulation variant 4: Troponin mildly elevated and flat. Cardiology documents myocardial injury/demand context; no STEMI/NSTEMI diagnosis.",
+    "ground_truth": {
+      "facts": [
+        "troponin elevated"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "myocardial injury": "confirmed"
+      },
+      "must_not_claim": [
+        "nstemi",
+        "acute myocardial infarction"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "diagnostic_overcall"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "troponin-demand-v5",
+    "title": "Troponin elevation without type 1 MI - Variant 5",
+    "category": "Cardiology",
+    "source_text": "De-identified synthetic simulation variant 5: Troponin mildly elevated and flat. Cardiology documents myocardial injury/demand context; no STEMI/NSTEMI diagnosis.",
+    "ground_truth": {
+      "facts": [
+        "troponin elevated"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "myocardial injury": "confirmed"
+      },
+      "must_not_claim": [
+        "nstemi",
+        "acute myocardial infarction"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "hp",
+      "progress",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "diagnostic_overcall"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "copd-oxygen-v1",
+    "title": "COPD exacerbation with oxygen change - Variant 1",
+    "category": "Respiratory",
+    "source_text": "De-identified synthetic simulation variant 1: COPD exacerbation documented. Oxygen 3 L then 1 L. No acute respiratory failure diagnosis.",
+    "ground_truth": {
+      "facts": [
+        "oxygen 3 l",
+        "oxygen 1 l"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "copd exacerbation": "confirmed"
+      },
+      "must_not_claim": [
+        "acute hypoxemic respiratory failure"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "respiratory_failure_overcall"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "copd-oxygen-v2",
+    "title": "COPD exacerbation with oxygen change - Variant 2",
+    "category": "Respiratory",
+    "source_text": "De-identified synthetic simulation variant 2: COPD exacerbation documented. Oxygen 3 L then 1 L. No acute respiratory failure diagnosis.",
+    "ground_truth": {
+      "facts": [
+        "oxygen 3 l",
+        "oxygen 1 l"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "copd exacerbation": "confirmed"
+      },
+      "must_not_claim": [
+        "acute hypoxemic respiratory failure"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "respiratory_failure_overcall"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "copd-oxygen-v3",
+    "title": "COPD exacerbation with oxygen change - Variant 3",
+    "category": "Respiratory",
+    "source_text": "De-identified synthetic simulation variant 3: COPD exacerbation documented. Oxygen 3 L then 1 L. No acute respiratory failure diagnosis.",
+    "ground_truth": {
+      "facts": [
+        "oxygen 3 l",
+        "oxygen 1 l"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "copd exacerbation": "confirmed"
+      },
+      "must_not_claim": [
+        "acute hypoxemic respiratory failure"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "respiratory_failure_overcall"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "copd-oxygen-v4",
+    "title": "COPD exacerbation with oxygen change - Variant 4",
+    "category": "Respiratory",
+    "source_text": "De-identified synthetic simulation variant 4: COPD exacerbation documented. Oxygen 3 L then 1 L. No acute respiratory failure diagnosis.",
+    "ground_truth": {
+      "facts": [
+        "oxygen 3 l",
+        "oxygen 1 l"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "copd exacerbation": "confirmed"
+      },
+      "must_not_claim": [
+        "acute hypoxemic respiratory failure"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "respiratory_failure_overcall"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "copd-oxygen-v5",
+    "title": "COPD exacerbation with oxygen change - Variant 5",
+    "category": "Respiratory",
+    "source_text": "De-identified synthetic simulation variant 5: COPD exacerbation documented. Oxygen 3 L then 1 L. No acute respiratory failure diagnosis.",
+    "ground_truth": {
+      "facts": [
+        "oxygen 3 l",
+        "oxygen 1 l"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {
+        "copd exacerbation": "confirmed"
+      },
+      "must_not_claim": [
+        "acute hypoxemic respiratory failure"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "respiratory_failure_overcall"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "dka-resolution-v1",
+    "title": "DKA improving with IV to subcutaneous insulin transition - Variant 1",
+    "category": "Diabetes",
+    "source_text": "De-identified synthetic simulation variant 1: DKA documented. Anion gap closes. IV insulin discontinued and basal/bolus insulin started.",
+    "ground_truth": {
+      "facts": [
+        "anion gap closed"
+      ],
+      "medication_states": [
+        "insulin iv:hospital:stopped",
+        "basal insulin:hospital:started"
+      ],
+      "diagnostic_certainty": {
+        "diabetic ketoacidosis": "confirmed"
+      },
+      "must_not_claim": [
+        "dka ongoing"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "transition_state"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "dka-resolution-v2",
+    "title": "DKA improving with IV to subcutaneous insulin transition - Variant 2",
+    "category": "Diabetes",
+    "source_text": "De-identified synthetic simulation variant 2: DKA documented. Anion gap closes. IV insulin discontinued and basal/bolus insulin started.",
+    "ground_truth": {
+      "facts": [
+        "anion gap closed"
+      ],
+      "medication_states": [
+        "insulin iv:hospital:stopped",
+        "basal insulin:hospital:started"
+      ],
+      "diagnostic_certainty": {
+        "diabetic ketoacidosis": "confirmed"
+      },
+      "must_not_claim": [
+        "dka ongoing"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "transition_state"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "dka-resolution-v3",
+    "title": "DKA improving with IV to subcutaneous insulin transition - Variant 3",
+    "category": "Diabetes",
+    "source_text": "De-identified synthetic simulation variant 3: DKA documented. Anion gap closes. IV insulin discontinued and basal/bolus insulin started.",
+    "ground_truth": {
+      "facts": [
+        "anion gap closed"
+      ],
+      "medication_states": [
+        "insulin iv:hospital:stopped",
+        "basal insulin:hospital:started"
+      ],
+      "diagnostic_certainty": {
+        "diabetic ketoacidosis": "confirmed"
+      },
+      "must_not_claim": [
+        "dka ongoing"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "transition_state"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "dka-resolution-v4",
+    "title": "DKA improving with IV to subcutaneous insulin transition - Variant 4",
+    "category": "Diabetes",
+    "source_text": "De-identified synthetic simulation variant 4: DKA documented. Anion gap closes. IV insulin discontinued and basal/bolus insulin started.",
+    "ground_truth": {
+      "facts": [
+        "anion gap closed"
+      ],
+      "medication_states": [
+        "insulin iv:hospital:stopped",
+        "basal insulin:hospital:started"
+      ],
+      "diagnostic_certainty": {
+        "diabetic ketoacidosis": "confirmed"
+      },
+      "must_not_claim": [
+        "dka ongoing"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "transition_state"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "dka-resolution-v5",
+    "title": "DKA improving with IV to subcutaneous insulin transition - Variant 5",
+    "category": "Diabetes",
+    "source_text": "De-identified synthetic simulation variant 5: DKA documented. Anion gap closes. IV insulin discontinued and basal/bolus insulin started.",
+    "ground_truth": {
+      "facts": [
+        "anion gap closed"
+      ],
+      "medication_states": [
+        "insulin iv:hospital:stopped",
+        "basal insulin:hospital:started"
+      ],
+      "diagnostic_certainty": {
+        "diabetic ketoacidosis": "confirmed"
+      },
+      "must_not_claim": [
+        "dka ongoing"
+      ],
+      "must_flag": []
+    },
+    "module_targets": [
+      "progress",
+      "med_rec",
+      "discharge"
+    ],
+    "hazard_tags": [
+      "transition_state"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "placement-auth-v1",
+    "title": "Medically stable but placement authorization pending - Variant 1",
+    "category": "Disposition",
+    "source_text": "De-identified synthetic simulation variant 1: Medical issues documented as stable. PT recommends SNF; insurance authorization remains pending.",
+    "ground_truth": {
+      "facts": [
+        "pt recommends snf",
+        "authorization pending"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {},
+      "must_not_claim": [
+        "snf placement confirmed",
+        "discharged to snf"
+      ],
+      "must_flag": [
+        "disposition unresolved"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "disposition"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "placement-auth-v2",
+    "title": "Medically stable but placement authorization pending - Variant 2",
+    "category": "Disposition",
+    "source_text": "De-identified synthetic simulation variant 2: Medical issues documented as stable. PT recommends SNF; insurance authorization remains pending.",
+    "ground_truth": {
+      "facts": [
+        "pt recommends snf",
+        "authorization pending"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {},
+      "must_not_claim": [
+        "snf placement confirmed",
+        "discharged to snf"
+      ],
+      "must_flag": [
+        "disposition unresolved"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "disposition"
+    ],
+    "difficulty": "standard",
+    "version": "2.0"
+  },
+  {
+    "slug": "placement-auth-v3",
+    "title": "Medically stable but placement authorization pending - Variant 3",
+    "category": "Disposition",
+    "source_text": "De-identified synthetic simulation variant 3: Medical issues documented as stable. PT recommends SNF; insurance authorization remains pending.",
+    "ground_truth": {
+      "facts": [
+        "pt recommends snf",
+        "authorization pending"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {},
+      "must_not_claim": [
+        "snf placement confirmed",
+        "discharged to snf"
+      ],
+      "must_flag": [
+        "disposition unresolved"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "disposition"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "placement-auth-v4",
+    "title": "Medically stable but placement authorization pending - Variant 4",
+    "category": "Disposition",
+    "source_text": "De-identified synthetic simulation variant 4: Medical issues documented as stable. PT recommends SNF; insurance authorization remains pending.",
+    "ground_truth": {
+      "facts": [
+        "pt recommends snf",
+        "authorization pending"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {},
+      "must_not_claim": [
+        "snf placement confirmed",
+        "discharged to snf"
+      ],
+      "must_flag": [
+        "disposition unresolved"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "disposition"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  },
+  {
+    "slug": "placement-auth-v5",
+    "title": "Medically stable but placement authorization pending - Variant 5",
+    "category": "Disposition",
+    "source_text": "De-identified synthetic simulation variant 5: Medical issues documented as stable. PT recommends SNF; insurance authorization remains pending.",
+    "ground_truth": {
+      "facts": [
+        "pt recommends snf",
+        "authorization pending"
+      ],
+      "medication_states": [],
+      "diagnostic_certainty": {},
+      "must_not_claim": [
+        "snf placement confirmed",
+        "discharged to snf"
+      ],
+      "must_flag": [
+        "disposition unresolved"
+      ]
+    },
+    "module_targets": [
+      "progress",
+      "discharge",
+      "signout"
+    ],
+    "hazard_tags": [
+      "disposition"
+    ],
+    "difficulty": "high_risk",
+    "version": "2.0"
+  }
+]
