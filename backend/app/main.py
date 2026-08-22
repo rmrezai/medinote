@@ -1,6 +1,8 @@
 from contextlib import asynccontextmanager
+from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from app.api.routes import router
 from app.api.clinical_routes import router as clinical_router
 from app.api.analysis_routes import router as analysis_router
@@ -68,3 +70,9 @@ app.include_router(contradiction_router)
 app.include_router(recovery_router)
 app.include_router(forensic_router)
 app.include_router(retention_router)
+
+# Serve the dependency-light physician UI from the same origin as the API.
+# This gives cloud deployments one shareable HTTPS URL and keeps API calls same-origin.
+_frontend_dir = Path(__file__).resolve().parents[2] / "frontend"
+if _frontend_dir.exists():
+    app.mount("/", StaticFiles(directory=str(_frontend_dir), html=True), name="frontend")
