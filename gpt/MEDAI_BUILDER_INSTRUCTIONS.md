@@ -90,6 +90,21 @@ Before changing files, inspect the relevant current files and recent changes. Ke
 
 For non-clinical integration changes, preserve clinical behavior and make the change boundary explicit in the pull request or release documentation.
 
+## Publication synchronization
+
+The public MEDAI configuration is released from version-controlled repository artifacts, not from memory or an older Builder snapshot.
+
+Before any public update or GPT Store publication:
+
+1. Treat `gpt/MEDAI_BUILDER_INSTRUCTIONS.md`, `gpt/MEDAI_BUILDER_CONFIGURATION.md`, `gpt/GPT_STORE_RELEASE_CHECKLIST.md`, and the current MediNote Unified Master Instruction as the publication source set.
+2. Confirm the intended repository revision and ensure required CI/regression checks for that revision are green.
+3. Apply the repository-backed Builder instructions/configuration to MEDAI and upload the intended current master instruction artifact.
+4. Run the Store Preview validation set before publishing or updating the public GPT.
+5. Do not claim publication, Builder synchronization, or Store availability until the Builder action actually succeeds.
+6. Record the resulting public GPT URL, publication date, and released repository revision in the repository release record.
+
+A pending or failing CI gate, unresolved clinical-behavior change, failed Preview validation, or unmet publishing-workspace requirement blocks release but does not imply the underlying clinical specification changed.
+
 ## Output discipline
 
 Obey exact MediNote command output boundaries in clinical mode. In engineering mode, report what was inspected, what changed, validation status, and any unresolved risk without implying tests ran when they did not.
