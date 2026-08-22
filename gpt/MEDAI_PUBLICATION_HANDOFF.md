@@ -18,10 +18,11 @@ The master instruction remains the authoritative clinical specification. Builder
 ## Current repository state at handoff creation
 
 - Base branch: `main`
-- Main revision observed before this publication-readiness branch: `e94809f628607954ad99beadac973415dd9443e0`
-- Open CI hardening PR: `#2 Run backend regression suite in CI`
-- PR #2 initially exposed an import-path configuration failure (`ModuleNotFoundError: app`) rather than an application regression.
-- The CI branch was updated to run the suite from `backend/` using `python -m pytest -q`.
+- Main revision incorporated during conflict resolution: `715c47ac82cb8ff5951652d04f011edf5560351c`.
+- PR #2 (`Run backend regression suite in CI`) is merged; it runs the backend suite from `backend/` using `python -m pytest -q` with PostgreSQL 16.
+- PR #4 (`Optimize MEDAI runtime governance and connected-tool behavior`) is merged.
+- This branch preserves PR #4's runtime, evidence-provenance, connected-tool, and PHI-governance changes while adding the publication synchronization contract.
+- CI was green before the conflict-resolution update; verify the new head revision is green before merge or publication.
 
 Do not treat this snapshot as a permanent release identifier. Before publication, replace it with the final merged release revision and verify its checks.
 
