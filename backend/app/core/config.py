@@ -1,3 +1,4 @@
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -14,6 +15,17 @@ class Settings(BaseSettings):
     retention_encryption_key_hex: str = ""
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+
+    @field_validator("database_url", mode="before")
+    @classmethod
+    def normalize_database_url(cls, value):
+        if not isinstance(value, str):
+            return value
+        if value.startswith("postgres://"):
+            return "postgresql+psycopg://" + value[len("postgres://"):]
+        if value.startswith("postgresql://") and not value.startswith("postgresql+psycopg://"):
+            return "postgresql+psycopg://" + value[len("postgresql://"):]
+        return value
 
     @property
     def cors_origin_list(self) -> list[str]:
