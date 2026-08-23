@@ -37,8 +37,7 @@ jobs:
       - name: Install backend dependencies
         run: pip install -r backend/requirements.txt
       - name: Run backend regression suite
-        working-directory: backend
-        run: python -m pytest -q
+        run: PYTHONPATH=backend python -m pytest -q backend/tests
 
   build:
     runs-on: ubuntu-latest
