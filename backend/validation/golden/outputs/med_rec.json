@@ -1,8 +1,8 @@
 {
-  "encounter_id": "a30f707c-b3b2-458c-8b04-c9406a45af3e",
+  "encounter_id": "462c58bc-e00d-40d9-ae5d-e671916fd91a",
   "medications": [
     {
-      "medication_id": "5fd1ea13-232a-4d1e-b406-f33523eead1e",
+      "medication_id": "54e0ffc1-efc2-485a-b9d5-a8f0e050e73d",
       "name": "apixaban",
       "normalized_name": "apixaban",
       "dose": null,
@@ -10,7 +10,7 @@
       "frequency": null,
       "indication": null,
       "home": {
-        "state_id": "ba3be645-5a1a-48d9-8f26-8c9a3b3a0886",
+        "state_id": "28c7e85c-fe4b-41c2-9d00-a3871baa7b74",
         "domain": "home",
         "status": "active",
         "reason": null,
@@ -20,7 +20,7 @@
         "revision": 1
       },
       "hospital": {
-        "state_id": "aa8240bb-a9d8-4b67-9d84-443a7689af71",
+        "state_id": "386c06ce-6cfd-49f8-a35c-4158f822e545",
         "domain": "hospital",
         "status": "ordered",
         "reason": null,
@@ -30,12 +30,12 @@
         "revision": 1
       },
       "discharge": {
-        "state_id": "fdeab315-cc79-4952-8c66-5cadfc81989c",
+        "state_id": "f8f8493d-51db-4d41-a4ce-13989da9b324",
         "domain": "discharge",
         "status": "continue",
         "reason": "Chronic atrial fibrillation; discharge continuation confirmed",
         "restart_criteria": null,
-        "effective_datetime": "2026-08-23 02:39:44.333085",
+        "effective_datetime": "2026-08-23 02:40:31.728973",
         "physician_confirmed": true,
         "revision": 1
       },
@@ -44,7 +44,7 @@
       "transition_summary": "Home: active -> Hospital: ordered -> Discharge: continue (confirmed)"
     },
     {
-      "medication_id": "25f3d89d-e09a-4977-b549-8cc45230fd42",
+      "medication_id": "0886ce44-dc16-48cd-8916-6f0659bb56a0",
       "name": "due to AKI",
       "normalized_name": "due to aki",
       "dose": null,
@@ -53,7 +53,7 @@
       "indication": null,
       "home": null,
       "hospital": {
-        "state_id": "bf5f4a83-a547-4a8a-a13c-6f6c176059a9",
+        "state_id": "032b041a-840e-4f2b-b4b1-dedaf17c1e0c",
         "domain": "hospital",
         "status": "held",
         "reason": null,
@@ -68,7 +68,7 @@
       "transition_summary": "Hospital: held"
     },
     {
-      "medication_id": "77a9f5eb-f49d-463d-8b46-07e39172cbef",
+      "medication_id": "e7db7300-8e37-4156-8e53-89e7206bc4c9",
       "name": "Losartan",
       "normalized_name": "losartan",
       "dose": null,
@@ -76,7 +76,7 @@
       "frequency": null,
       "indication": null,
       "home": {
-        "state_id": "98bd6927-bd02-4787-903a-f8aa465b98de",
+        "state_id": "b8f8c9e2-af46-4c58-8188-1d144c45661d",
         "domain": "home",
         "status": "active",
         "reason": null,
@@ -86,7 +86,7 @@
         "revision": 1
       },
       "hospital": {
-        "state_id": "96c03fe0-e4d2-477f-9c79-26dcc17c22c8",
+        "state_id": "0e7222ff-af10-4ff0-b5cd-92c5476a5439",
         "domain": "hospital",
         "status": "held",
         "reason": null,
@@ -96,12 +96,12 @@
         "revision": 1
       },
       "discharge": {
-        "state_id": "c145f0a8-b04c-47e2-a8a8-439db958ed9a",
+        "state_id": "fc6230a1-b4c0-4326-9310-fcec5617907d",
         "domain": "discharge",
         "status": "stop",
         "reason": "Held for AKI; outpatient reassessment needed",
         "restart_criteria": null,
-        "effective_datetime": "2026-08-23 02:39:44.329989",
+        "effective_datetime": "2026-08-23 02:40:31.726038",
         "physician_confirmed": true,
         "revision": 1
       },

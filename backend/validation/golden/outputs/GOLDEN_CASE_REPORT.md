@@ -5,7 +5,7 @@
 - Safety trap caught: **True**
 - Blocking flags after physician correction: **0**
 - Final document states: H&P=finalized, Progress=finalized, Signout=finalized, Discharge=finalized
-- End-to-end runtime in local in-memory test: **0.450 s**
+- End-to-end runtime in local in-memory test: **0.435 s**
 - External model calls: **0**; observed model cost: **$0.00** (current deterministic scaffold).
 
 ## What the test exercised
