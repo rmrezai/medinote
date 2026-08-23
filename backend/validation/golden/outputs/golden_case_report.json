@@ -1,14 +1,14 @@
 {
   "golden_case_version": "1.1-step41",
   "synthetic_deidentified": true,
-  "runtime_seconds": 0.465,
+  "runtime_seconds": 0.513,
   "source_characters": 1531,
   "estimated_source_tokens": 383,
   "external_model_calls": 0,
   "observed_model_cost_usd": 0.0,
   "analysis_runs": [
     {
-      "encounter_id": "af050a89-3b8a-4b41-a7cf-091f6f5364e0",
+      "encounter_id": "4e70d1e9-6210-4639-aba9-e90c2fd27a40",
       "status": "complete",
       "extraction_version": "mcif-deterministic-0.1",
       "sources_analyzed": 1,
@@ -21,7 +21,7 @@
       "disposition_states_created": 1,
       "source_reports": [
         {
-          "source_document_id": "372bffe0-077d-4587-99f7-57a8b052f883",
+          "source_document_id": "e1ab0772-e2da-44db-a9a5-e758ec2d9f48",
           "document_type": "hp",
           "candidate_counts": {
             "facts": 10,
@@ -38,7 +38,7 @@
         }
       ],
       "reconciliation": {
-        "encounter_id": "af050a89-3b8a-4b41-a7cf-091f6f5364e0",
+        "encounter_id": "4e70d1e9-6210-4639-aba9-e90c2fd27a40",
         "status": "complete",
         "reconciliation_version": "mcif-reconcile-0.1",
         "facts_superseded": 0,
@@ -54,7 +54,7 @@
         ]
       },
       "synthesis": {
-        "encounter_id": "af050a89-3b8a-4b41-a7cf-091f6f5364e0",
+        "encounter_id": "4e70d1e9-6210-4639-aba9-e90c2fd27a40",
         "status": "complete",
         "synthesis_version": "0.1.0",
         "problems_processed": 4,
@@ -62,7 +62,7 @@
         "evidence_links_created": 0,
         "problems": [
           {
-            "problem_id": "6ae31917-c913-4e82-84a8-6b1673343ac5",
+            "problem_id": "43144dd6-f083-4778-882b-6f094f1ba6b7",
             "name": "acute hypoxemic respiratory failure",
             "normalized_name": "acute_hypoxemic_respiratory_failure",
             "certainty": "confirmed",
@@ -73,7 +73,7 @@
             "physician_approved": false
           },
           {
-            "problem_id": "04bfd10f-8cd2-4e90-a705-e87bd7d0f375",
+            "problem_id": "25e0f49f-39be-4c5c-835d-1c3a1600d727",
             "name": "Acute kidney injury",
             "normalized_name": "acute_kidney_injury",
             "certainty": "confirmed",
@@ -84,7 +84,7 @@
             "physician_approved": false
           },
           {
-            "problem_id": "f7cfcb2b-ce12-40fd-9943-361bfcaa70d4",
+            "problem_id": "0001fec4-04f6-4b82-91ce-bb054183c42f",
             "name": "pneumonia",
             "normalized_name": "pneumonia",
             "certainty": "confirmed",
@@ -95,7 +95,7 @@
             "physician_approved": false
           },
           {
-            "problem_id": "023b41f3-e234-4a9a-bc5d-974d64f146a1",
+            "problem_id": "57f5e04a-4389-4074-beb0-9468c4022869",
             "name": "Atrial fibrillation",
             "normalized_name": "atrial_fibrillation",
             "certainty": "confirmed",
@@ -121,7 +121,7 @@
       ]
     },
     {
-      "encounter_id": "af050a89-3b8a-4b41-a7cf-091f6f5364e0",
+      "encounter_id": "4e70d1e9-6210-4639-aba9-e90c2fd27a40",
       "status": "complete",
       "extraction_version": "mcif-deterministic-0.1",
       "sources_analyzed": 4,
@@ -133,7 +133,7 @@
       "disposition_states_created": 1,
       "source_reports": [
         {
-          "source_document_id": "372bffe0-077d-4587-99f7-57a8b052f883",
+          "source_document_id": "e1ab0772-e2da-44db-a9a5-e758ec2d9f48",
           "document_type": "hp",
           "candidate_counts": {
             "facts": 10,
@@ -149,7 +149,7 @@
           }
         },
         {
-          "source_document_id": "66020c5b-6162-4e2b-8b39-d5583f995f26",
+          "source_document_id": "ef6e6759-15c8-4e85-95e3-63a34af238e5",
           "document_type": "progress_note",
           "candidate_counts": {
             "facts": 7,
@@ -165,7 +165,7 @@
           }
         },
         {
-          "source_document_id": "ecc0d30b-2680-4fda-a3b1-2c92a82b8c1a",
+          "source_document_id": "8f07bba8-c57d-4a66-b66c-ba9bd37bc893",
           "document_type": "consult_note",
           "candidate_counts": {
             "facts": 0,
@@ -181,7 +181,7 @@
           }
         },
         {
-          "source_document_id": "56b91617-340a-41ba-a353-87e8ac293cb2",
+          "source_document_id": "901c64bc-334b-4973-9fa5-41111f4051f4",
           "document_type": "therapy",
           "candidate_counts": {
             "facts": 0,
@@ -198,7 +198,7 @@
         }
       ],
       "reconciliation": {
-        "encounter_id": "af050a89-3b8a-4b41-a7cf-091f6f5364e0",
+        "encounter_id": "4e70d1e9-6210-4639-aba9-e90c2fd27a40",
         "status": "complete",
         "reconciliation_version": "mcif-reconcile-0.1",
         "facts_superseded": 7,
@@ -214,7 +214,7 @@
         ]
       },
       "synthesis": {
-        "encounter_id": "af050a89-3b8a-4b41-a7cf-091f6f5364e0",
+        "encounter_id": "4e70d1e9-6210-4639-aba9-e90c2fd27a40",
         "status": "complete",
         "synthesis_version": "0.1.0",
         "problems_processed": 4,
@@ -222,7 +222,7 @@
         "evidence_links_created": 2,
         "problems": [
           {
-            "problem_id": "6ae31917-c913-4e82-84a8-6b1673343ac5",
+            "problem_id": "43144dd6-f083-4778-882b-6f094f1ba6b7",
             "name": "acute hypoxemic respiratory failure",
             "normalized_name": "acute_hypoxemic_respiratory_failure",
             "certainty": "confirmed",
@@ -230,12 +230,12 @@
             "acuity_rank": 18,
             "trajectory_basis": "oxygen_support_decreasing",
             "evidence_fact_ids": [
-              "6299a8b2-fd28-4d1c-a757-dce3778f2036"
+              "a60dd084-add3-4810-bd3f-93848c7ee236"
             ],
             "physician_approved": false
           },
           {
-            "problem_id": "04bfd10f-8cd2-4e90-a705-e87bd7d0f375",
+            "problem_id": "25e0f49f-39be-4c5c-835d-1c3a1600d727",
             "name": "Acute kidney injury",
             "normalized_name": "acute_kidney_injury",
             "certainty": "confirmed",
@@ -243,12 +243,12 @@
             "acuity_rank": 48,
             "trajectory_basis": "creatinine_falling",
             "evidence_fact_ids": [
-              "cd6ff475-ee7d-456d-b748-c1736117a4b3"
+              "fe8e8fdd-c69e-4234-9adf-7a7ab905d11a"
             ],
             "physician_approved": false
           },
           {
-            "problem_id": "f7cfcb2b-ce12-40fd-9943-361bfcaa70d4",
+            "problem_id": "0001fec4-04f6-4b82-91ce-bb054183c42f",
             "name": "pneumonia",
             "normalized_name": "pneumonia",
             "certainty": "confirmed",
@@ -259,7 +259,7 @@
             "physician_approved": false
           },
           {
-            "problem_id": "023b41f3-e234-4a9a-bc5d-974d64f146a1",
+            "problem_id": "57f5e04a-4389-4074-beb0-9468c4022869",
             "name": "Atrial fibrillation",
             "normalized_name": "atrial_fibrillation",
             "certainty": "confirmed",
@@ -285,7 +285,7 @@
       ]
     },
     {
-      "encounter_id": "af050a89-3b8a-4b41-a7cf-091f6f5364e0",
+      "encounter_id": "4e70d1e9-6210-4639-aba9-e90c2fd27a40",
       "status": "complete",
       "extraction_version": "mcif-deterministic-0.1",
       "sources_analyzed": 6,
@@ -297,7 +297,7 @@
       "disposition_states_created": 1,
       "source_reports": [
         {
-          "source_document_id": "372bffe0-077d-4587-99f7-57a8b052f883",
+          "source_document_id": "e1ab0772-e2da-44db-a9a5-e758ec2d9f48",
           "document_type": "hp",
           "candidate_counts": {
             "facts": 10,
@@ -313,7 +313,7 @@
           }
         },
         {
-          "source_document_id": "66020c5b-6162-4e2b-8b39-d5583f995f26",
+          "source_document_id": "ef6e6759-15c8-4e85-95e3-63a34af238e5",
           "document_type": "progress_note",
           "candidate_counts": {
             "facts": 7,
@@ -329,7 +329,7 @@
           }
         },
         {
-          "source_document_id": "ecc0d30b-2680-4fda-a3b1-2c92a82b8c1a",
+          "source_document_id": "8f07bba8-c57d-4a66-b66c-ba9bd37bc893",
           "document_type": "consult_note",
           "candidate_counts": {
             "facts": 0,
@@ -345,7 +345,7 @@
           }
         },
         {
-          "source_document_id": "56b91617-340a-41ba-a353-87e8ac293cb2",
+          "source_document_id": "901c64bc-334b-4973-9fa5-41111f4051f4",
           "document_type": "therapy",
           "candidate_counts": {
             "facts": 0,
@@ -361,7 +361,7 @@
           }
         },
         {
-          "source_document_id": "ea3b6dce-e80d-4ab4-b8c1-ad5c10c91dc2",
+          "source_document_id": "678da203-3356-4843-a5a9-92c665fedcbc",
           "document_type": "progress_note",
           "candidate_counts": {
             "facts": 8,
@@ -377,7 +377,7 @@
           }
         },
         {
-          "source_document_id": "1d3d7221-676b-4ac3-8cf0-dc65ac599c9b",
+          "source_document_id": "1bb3dc40-ae70-4ecc-b19e-6407b4347cf4",
           "document_type": "discharge",
           "candidate_counts": {
             "facts": 2,
@@ -394,7 +394,7 @@
         }
       ],
       "reconciliation": {
-        "encounter_id": "af050a89-3b8a-4b41-a7cf-091f6f5364e0",
+        "encounter_id": "4e70d1e9-6210-4639-aba9-e90c2fd27a40",
         "status": "complete",
         "reconciliation_version": "mcif-reconcile-0.1",
         "facts_superseded": 9,
@@ -410,7 +410,7 @@
         ]
       },
       "synthesis": {
-        "encounter_id": "af050a89-3b8a-4b41-a7cf-091f6f5364e0",
+        "encounter_id": "4e70d1e9-6210-4639-aba9-e90c2fd27a40",
         "status": "complete",
         "synthesis_version": "0.1.0",
         "problems_processed": 4,
@@ -418,7 +418,7 @@
         "evidence_links_created": 2,
         "problems": [
           {
-            "problem_id": "6ae31917-c913-4e82-84a8-6b1673343ac5",
+            "problem_id": "43144dd6-f083-4778-882b-6f094f1ba6b7",
             "name": "acute hypoxemic respiratory failure",
             "normalized_name": "acute_hypoxemic_respiratory_failure",
             "certainty": "confirmed",
@@ -426,12 +426,12 @@
             "acuity_rank": 18,
             "trajectory_basis": "oxygen_support_decreasing",
             "evidence_fact_ids": [
-              "3ceef236-93b7-47f4-aecc-b2bb173b863d"
+              "0efdf823-5de3-4333-af2b-55b8576b9e94"
             ],
             "physician_approved": false
           },
           {
-            "problem_id": "04bfd10f-8cd2-4e90-a705-e87bd7d0f375",
+            "problem_id": "25e0f49f-39be-4c5c-835d-1c3a1600d727",
             "name": "Acute kidney injury",
             "normalized_name": "acute_kidney_injury",
             "certainty": "confirmed",
@@ -439,12 +439,12 @@
             "acuity_rank": 48,
             "trajectory_basis": "creatinine_falling",
             "evidence_fact_ids": [
-              "e7e47ebb-054b-48b9-b7ef-c7ac81911e64"
+              "434ce04a-de92-421c-92c1-82bec8265cae"
             ],
             "physician_approved": false
           },
           {
-            "problem_id": "f7cfcb2b-ce12-40fd-9943-361bfcaa70d4",
+            "problem_id": "0001fec4-04f6-4b82-91ce-bb054183c42f",
             "name": "pneumonia",
             "normalized_name": "pneumonia",
             "certainty": "confirmed",
@@ -455,7 +455,7 @@
             "physician_approved": false
           },
           {
-            "problem_id": "023b41f3-e234-4a9a-bc5d-974d64f146a1",
+            "problem_id": "57f5e04a-4389-4074-beb0-9468c4022869",
             "name": "Atrial fibrillation",
             "normalized_name": "atrial_fibrillation",
             "certainty": "confirmed",
