@@ -1,6 +1,6 @@
 {
-  "encounter_id": "b457b743-78d9-4522-a490-1f1c3091f16e",
-  "patient_id": "2f2f1697-fdb5-408e-b825-2616d321be18",
+  "encounter_id": "3a5e210d-ec6b-427f-839d-611efbc68b83",
+  "patient_id": "64cfad56-4267-46e6-af09-f20b9d3a4625",
   "patient_display_name": "Synthetic Patient",
   "mrn": "GOLDEN-001",
   "service": "Hospital Medicine",
@@ -10,7 +10,7 @@
   "current_clinical_picture": "Active inpatient picture: acute hypoxemic respiratory failure - improving; Acute kidney injury - improving; pneumonia - improving.",
   "problems": [
     {
-      "id": "1ea89362-9c24-4650-80f7-0e5d9c7aa841",
+      "id": "a77190de-b8be-4c64-b75a-97b7eeef372f",
       "name": "acute hypoxemic respiratory failure",
       "normalized_name": "acute_hypoxemic_respiratory_failure",
       "certainty": "confirmed",
@@ -19,31 +19,31 @@
       "physician_approved": false,
       "evidence": [
         {
-          "fact_id": "92cbd18e-99fc-438d-acac-89cc65df53d3",
+          "fact_id": "b71496ee-4581-4312-9e72-b4e5cbf6b862",
           "concept": "oxygen_flow",
           "value": "2.0 L/min",
           "units": "L/min",
           "observed_datetime": "2026-08-19 08:00:00",
           "confidence": "high",
-          "source_document_id": "ee3fad4d-e5a8-4c1c-8c47-13f36ba006f0",
+          "source_document_id": "4234ae4a-bba5-4c41-b897-4253ee8169f8",
           "relationship": "trajectory_support",
           "evidence_strength": "supporting"
         },
         {
-          "fact_id": "440877fe-1c02-4c09-9c2b-0c287f25b965",
+          "fact_id": "3ebfe61b-6d69-48fe-ad46-b2dd84f3864e",
           "concept": "oxygen_device",
           "value": "room_air",
           "units": null,
           "observed_datetime": "2026-08-20 12:00:00",
           "confidence": "high",
-          "source_document_id": "baa7c0eb-9df1-45d2-800f-5867205f1f00",
+          "source_document_id": "332c1c3e-6b35-4172-aa67-99a4a722987e",
           "relationship": "trajectory_support",
           "evidence_strength": "supporting"
         }
       ]
     },
     {
-      "id": "3d3d7e00-b836-4daf-9f49-0cdbe3645b75",
+      "id": "88c550fa-d934-46e5-89f9-50dcf4253caa",
       "name": "Acute kidney injury",
       "normalized_name": "acute_kidney_injury",
       "certainty": "confirmed",
@@ -52,31 +52,31 @@
       "physician_approved": false,
       "evidence": [
         {
-          "fact_id": "64046bb5-fdf9-4c2e-8b39-4ad5e0db650c",
+          "fact_id": "20f133f9-3a13-4bc2-a945-e578f73e8867",
           "concept": "creatinine",
           "value": "1.7 mg/dL",
           "units": "mg/dL",
           "observed_datetime": "2026-08-19 08:00:00",
           "confidence": "high",
-          "source_document_id": "ee3fad4d-e5a8-4c1c-8c47-13f36ba006f0",
+          "source_document_id": "4234ae4a-bba5-4c41-b897-4253ee8169f8",
           "relationship": "trajectory_support",
           "evidence_strength": "supporting"
         },
         {
-          "fact_id": "ba839589-143d-4ffa-abcd-a271b9c23ad5",
+          "fact_id": "9e562ff1-4f6d-44f3-8e88-df73ff63ae22",
           "concept": "creatinine",
           "value": "1.2 mg/dL",
           "units": "mg/dL",
           "observed_datetime": "2026-08-20 12:00:00",
           "confidence": "high",
-          "source_document_id": "baa7c0eb-9df1-45d2-800f-5867205f1f00",
+          "source_document_id": "332c1c3e-6b35-4172-aa67-99a4a722987e",
           "relationship": "trajectory_support",
           "evidence_strength": "supporting"
         }
       ]
     },
     {
-      "id": "cb497a54-ca1d-43af-8e13-3c6e41bd8273",
+      "id": "157fe0ae-77a3-4f85-95fe-7874486112b0",
       "name": "pneumonia",
       "normalized_name": "pneumonia",
       "certainty": "confirmed",
@@ -86,7 +86,7 @@
       "evidence": []
     },
     {
-      "id": "de9d63ea-f700-4a08-9e2c-4b9a5561cce6",
+      "id": "dbf4e09e-2f2d-4e25-b47b-41d70a221362",
       "name": "Atrial fibrillation",
       "normalized_name": "atrial_fibrillation",
       "certainty": "confirmed",
@@ -98,7 +98,7 @@
   ],
   "latest_labs": [
     {
-      "id": "2c8b392f-cfb1-4788-954a-c711f2dc5891",
+      "id": "a7120de8-0c2e-4e94-b6a8-4d4244f092c8",
       "test_name": "creatinine",
       "value_numeric": 1.2,
       "value_text": null,
@@ -110,7 +110,7 @@
       "latest_value": "1.2"
     },
     {
-      "id": "8eda04a2-c247-4db4-9a1a-5de85e76b1e7",
+      "id": "8121a723-4db5-4204-af99-18c43b6705d2",
       "test_name": "bun",
       "value_numeric": 24.0,
       "value_text": null,
@@ -122,7 +122,7 @@
       "latest_value": "24.0"
     },
     {
-      "id": "80303993-ca10-4e75-b4a7-eafc13f45044",
+      "id": "9ae86f6d-3e70-4d1e-87d1-19054646617b",
       "test_name": "sodium",
       "value_numeric": 137.0,
       "value_text": null,
@@ -134,7 +134,7 @@
       "latest_value": "137.0"
     },
     {
-      "id": "1777b64d-6f1f-479a-b03e-ff9bf8f49a5b",
+      "id": "4ec1ee1b-2b6b-40a3-9ecd-9f1f907655e8",
       "test_name": "potassium",
       "value_numeric": 4.1,
       "value_text": null,
@@ -146,7 +146,7 @@
       "latest_value": "4.1"
     },
     {
-      "id": "611fc1c9-f31f-4a3f-aeef-18c14198b264",
+      "id": "c424af60-943c-44c6-9972-9b5d45d15ddf",
       "test_name": "wbc",
       "value_numeric": 8.4,
       "value_text": null,
@@ -158,7 +158,7 @@
       "latest_value": "8.4"
     },
     {
-      "id": "fa9b763c-d71a-4356-b9f5-db97a322af80",
+      "id": "63e8761b-b4b4-4c11-a537-de3aa713e3ae",
       "test_name": "hemoglobin",
       "value_numeric": 11.5,
       "value_text": null,
@@ -170,7 +170,7 @@
       "latest_value": "11.5"
     },
     {
-      "id": "a64d6001-0299-4d00-8801-eb5a13855a8d",
+      "id": "2d3a6897-c06d-4f5e-925a-6a765b701b65",
       "test_name": "glucose",
       "value_numeric": 148.0,
       "value_text": null,
@@ -184,7 +184,7 @@
   ],
   "medications": [
     {
-      "id": "8fa97876-c06a-4dce-8170-05a8fc653d84",
+      "id": "f57fd45d-9ac2-417c-82f7-cbe9bc1447a5",
       "name": "apixaban",
       "normalized_name": "apixaban",
       "dose": null,
@@ -195,7 +195,7 @@
         {
           "domain": "discharge",
           "status": "continue",
-          "effective_datetime": "2026-08-20 23:59:12.365069",
+          "effective_datetime": "2026-08-23 02:27:16.743841",
           "reason": "Chronic atrial fibrillation; discharge continuation confirmed",
           "restart_criteria": null,
           "physician_confirmed": true
@@ -220,7 +220,7 @@
       "unresolved": false
     },
     {
-      "id": "cbe5a33e-0579-423f-bca1-a3abfda32088",
+      "id": "839dc2f1-7e6b-4fa3-9c1c-b6e111f1b223",
       "name": "due to AKI",
       "normalized_name": "due to aki",
       "dose": null,
@@ -240,7 +240,7 @@
       "unresolved": false
     },
     {
-      "id": "ca40a178-5e2d-4c45-9034-fb185cd4440b",
+      "id": "79d06370-e7b1-44ed-b690-c67794e13e5a",
       "name": "Losartan",
       "normalized_name": "losartan",
       "dose": null,
@@ -251,7 +251,7 @@
         {
           "domain": "discharge",
           "status": "stop",
-          "effective_datetime": "2026-08-20 23:59:12.362912",
+          "effective_datetime": "2026-08-23 02:27:16.740965",
           "reason": "Held for AKI; outpatient reassessment needed",
           "restart_criteria": null,
           "physician_confirmed": true
@@ -278,7 +278,7 @@
   ],
   "consultants": [
     {
-      "id": "005cf91f-6883-4f3a-90fe-f1dcb24fe233",
+      "id": "d72f7ba9-9a91-483a-a6c0-0844a7b25da6",
       "service": "Nephrology",
       "consultant_name": null,
       "recommendation_datetime": "2026-08-19 11:00:00",
