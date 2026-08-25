@@ -3,12 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MediNote</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <meta
+    name="description"
+    content="MediNote is an evidence-first inpatient clinical documentation platform for chart synthesis, medication reconciliation, signout, discharge documentation, CDI review, and safety audit workflows."
+  />
+  <title>MediNote | Evidence-first clinical documentation</title>
+  <link rel="stylesheet" href="./landing.css" />
 </head>
 <body>
-  <div id="app"></div>
-  <div id="toast-root" aria-live="polite"></div>
-  <script type="module" src="./app.js"></script>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="MediNote home">
+      <span class="brand-mark">M</span>
+      <span>
+        <strong>MediNote</strong>
+        <small>Documentation Platform</small>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#workflows">Workflows</a>
+      <a href="#safety">Safety</a>
+      <a href="#demo">Demo</a>
+      <a class="nav-cta" href="./pilot.html">Open pilot app</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-pad">
+      <div class="hero-copy">
+        <p class="eyebrow">Physician-controlled AI documentation</p>
+        <h1>Evidence-first inpatient clinical documentation.</h1>
+        <p class="hero-subtitle">
+          MediNote turns supplied chart data into auditable notes, signouts, medication reconciliation,
+          discharge courses, CDI review, and safety checks while preserving uncertainty and keeping
+          clinician judgment final.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#demo">Try de-identified workflow</a>
+          <a class="button secondary" href="#workflows">Explore workflows</a>
+        </div>
+        <p class="safety-note">
+          Public/demo use is for synthetic or properly de-identified material only. Do not enter PHI.
+        </p>
+      </div>
+      <aside class="hero-panel" aria-label="MediNote workflow preview">
+        <div class="panel-label">MEDAI workflow</div>
+        <div class="chart-card">
+          <span class="status-dot"></span>
+          <strong>Source evidence</strong>
+          <p>Current objective data, consultant notes, medication state, and documented chronology.</p>
+        </div>
+        <div class="chart-card">
+          <span class="status-dot amber"></span>
+          <strong>Clinical synthesis</strong>
+          <p>HOOP, med2, signout, dispo, DCC, query risk, trajectory, and audit-ready output.</p>
+        </div>
+        <div class="chart-card">
+          <span class="status-dot green"></span>
+          <strong>Physician review</strong>
+          <p>Accept, edit, regenerate, audit, and finalize only after clinician-controlled review.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section-pad contrast">
+      <div class="section-heading">
+        <p class="eyebrow">Why MediNote</p>
+        <h2>Not just note generation. Documentation intelligence.</h2>
+        <p>
+          MediNote is designed around clinical truth, medication-state reconciliation, contradiction
+          detection, and auditability rather than smooth prose alone.
+        </p>
+      </div>
+      <div class="value-grid">
+        <article>
+          <h3>Evidence-linked output</h3>
+          <p>Major documentation claims are anchored to supplied facts, dates, sources, and objective evidence when available.</p>
+        </article>
+        <article>
+          <h3>Medication-state aware</h3>
+          <p>Separates home lists, active orders, MAR administration, held/stopped/resumed states, and discharge intent.</p>
+        </article>
+        <article>
+          <h3>Audit before finalization</h3>
+          <p>Flags unsupported claims, stale data, unresolved contradictions, and discharge-completion risk before copy-to-chart use.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="workflows" class="section-pad">
+      <div class="section-heading narrow">
+        <p class="eyebrow">Core workflows</p>
+        <h2>Built for the inpatient documentation loop.</h2>
+      </div>
+      <div class="workflow-grid">
+        <article><span>HOOP</span><h3>Progress notes</h3><p>Acuity-ordered problems, two-sentence HPI, dated evidence, focused exam, and disposition.</p></article>
+        <article><span>med2</span><h3>Medication reconciliation</h3><p>Actionable medication/order addendum with explicit state and objective rationale.</p></article>
+        <article><span>signout</span><h3>Handoff</h3><p>One-liner, active problems, pending items, overnight risks, and if/then contingencies.</p></article>
+        <article><span>DCC</span><h3>Discharge course</h3><p>Diagnosis-organized discharge narrative with trajectory, medication transitions, pending items, and follow-up needs.</p></article>
+        <article><span>dispo</span><h3>Disposition reasoning</h3><p>Current barriers, functional needs, placement issues, equipment, oxygen/infusion needs, and remaining inpatient need.</p></article>
+        <article><span>query risk</span><h3>CDI review</h3><p>Neutral query opportunities based on objective indicators, missing specificity, and unable-to-determine options.</p></article>
+      </div>
+    </section>
+
+    <section id="safety" class="section-pad safety-section">
+      <div class="section-heading narrow">
+        <p class="eyebrow">Clinical governance</p>
+        <h2>The chart owns the facts. The physician owns the decision.</h2>
+        <p>
+          MediNote organizes, synthesizes, reconciles, and audits. It does not autonomously diagnose,
+          order treatment, reconcile medications, authorize discharge, or replace the treating clinician.
+        </p>
+      </div>
+      <div class="safety-grid">
+        <div class="safety-card"><strong>No PHI in public demo</strong><span>Use synthetic or properly de-identified cases only.</span></div>
+        <div class="safety-card"><strong>No silent diagnosis</strong><span>Uncertainty is preserved instead of converted into unsupported certainty.</span></div>
+        <div class="safety-card"><strong>No silent orders</strong><span>Suggested actions remain clinician-review suggestions unless documented as completed.</span></div>
+        <div class="safety-card"><strong>No silent discharge</strong><span>Discharge readiness and completed arrangements are never invented.</span></div>
+      </div>
+    </section>
+
+    <section id="demo" class="section-pad demo-section">
+      <div class="demo-card">
+        <p class="eyebrow">Start here</p>
+        <h2>Use MediNote as a public landing page and pilot entry point.</h2>
+        <p>
+          This repository can serve the public site at the root while preserving the existing physician-facing
+          pilot interface on a separate page.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="./pilot.html">Open pilot app</a>
+          <a class="button secondary" href="#top">Back to top</a>
+        </div>
+        <p class="safety-note">
+          Before any production or PHI-capable deployment, confirm institutional governance, access controls,
+          privacy/security review, and required agreements.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© MediNote. Evidence-first clinical documentation technology.</p>
+    <p>Clinical decision-support and documentation assistance for trained clinicians; physician judgment remains final.</p>
+  </footer>
 </body>
 </html>
