@@ -1,0 +1,92 @@
+{
+  "brand": "CLINISTRY",
+  "live_care_enabled": false,
+  "services": [
+    {
+      "id": "primary-care",
+      "name": "Adult & geriatric-focused care",
+      "caption": "Primary care through telemedicine.",
+      "status": "Enrollment not yet open",
+      "interest": "general_telemedicine",
+      "description": "Telemedicine for adults 18 and older, with a particular focus on older adults, chronic conditions, prevention, and maintaining independence. Pediatric care is not offered.",
+      "points": [
+        "Ongoing primary care and medication review",
+        "Geriatric care, function, and cognitive assessment when appropriate",
+        "Family participation with your permission"
+      ],
+      "note": "In-person examinations, testing, and referrals may still be needed. Home visits are a future service."
+    },
+    {
+      "id": "weight-management",
+      "name": "Weight management",
+      "caption": "Medical weight management.",
+      "status": "Enrollment not yet open",
+      "interest": "weight_management",
+      "description": "Individualized weight-management visits connected to your broader health, with nutrition, activity, sleep, and medical options considered together.",
+      "points": [
+        "An adult telemedicine evaluation",
+        "Discussion of GLP-1 and other options when clinically appropriate",
+        "Follow-up focused on progress, tolerability, and long-term care"
+      ],
+      "note": "Medication is not guaranteed. Prescriptions, medication costs, and visit pricing will be explained before enrollment."
+    },
+    {
+      "id": "sleep-medicine",
+      "name": "Sleep medicine",
+      "caption": "Adult sleep evaluation and follow-up.",
+      "status": "Planned care pathway",
+      "interest": "sleep_medicine",
+      "description": "A planned adult sleep-medicine pathway for evaluating sleep concerns and coordinating appropriate testing and follow-up.",
+      "points": [
+        "A conversation about sleep quality and daytime function",
+        "Coordination of sleep testing when appropriate",
+        "Sleep care connected with primary care and weight management"
+      ],
+      "note": "Sleep testing and device treatment are not currently offered through this site."
+    },
+    {
+      "id": "transitional-care",
+      "name": "Transitional care",
+      "caption": "Continuity after a hospital stay.",
+      "status": "Planned",
+      "interest": null,
+      "description": "Support after a hospital stay, designed to work alongside your existing primary care clinician and specialists\u2014not replace them.",
+      "points": [
+        "Reconcile discharge medications and follow-up plans",
+        "Coordinate pending tests, referrals, and home support",
+        "Include family or caregivers with patient permission"
+      ],
+      "note": "Connected glucose meters, scales, blood-pressure devices, and hospital-record integrations are planned. They are not connected to this website today.",
+      "href": "/transitional-care.html"
+    },
+    {
+      "id": "concierge",
+      "name": "Concierge care",
+      "caption": "A planned membership care model.",
+      "status": "Planned",
+      "interest": null,
+      "description": "A future membership option for adults seeking more continuity and access to their care team.",
+      "points": [
+        "Defined membership benefits and access arrangements",
+        "An emphasis on aging well and independence",
+        "Home visits may be considered as the service develops"
+      ],
+      "note": "Membership pricing, coverage area, hours, and exclusions are not yet established. A membership will not imply unlimited or all-inclusive medical services."
+    },
+    {
+      "id": "hospital-medicine",
+      "name": "Hospital medicine",
+      "caption": "Coordination across care settings.",
+      "status": "Planned",
+      "interest": null,
+      "description": "A future division connecting inpatient expertise with safer transitions and ongoing care at home.",
+      "points": [
+        "Clinical documentation and medication reconciliation",
+        "Continuity across hospital and outpatient settings",
+        "Clinician-reviewed technology to support care teams"
+      ],
+      "note": "Hospital services and electronic medical record integrations are not available through this site.",
+      "href": "/hospital-medicine.html"
+    }
+  ]
+}
