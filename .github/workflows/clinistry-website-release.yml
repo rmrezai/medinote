@@ -1,0 +1,34 @@
+name: Clinistry website release preparation
+on:
+  workflow_dispatch:
+  pull_request:
+    paths: ['clinistry/website/**', 'deploy/release/**', '.github/workflows/clinistry-website-release.yml']
+  push:
+    branches: [main]
+    paths: ['clinistry/website/**', 'deploy/release/**', '.github/workflows/clinistry-website-release.yml']
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check patient journey behavior
+        run: node --test clinistry/website/tests/care-access-model.test.mjs
+      - name: Check release boundaries
+        run: python -m unittest discover -s deploy/release -p 'test_*.py'
+      - name: Package website walkthrough
+        run: python deploy/release/package_website.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: clinistry-website-${{ github.sha }}
+          path: release/clinistry-website.zip
+          retention-days: 14
+          if-no-files-found: error
