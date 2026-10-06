@@ -40,3 +40,5 @@ from app.models.problem_list import PatientProblemListEntry, EncounterDiagnosisC
 __all__ += ["PatientProblemListEntry", "EncounterDiagnosisClassification"]
 from app.models.medication_profile import PatientMedicationProfileEntry, PatientAllergyIntoleranceEntry, ExternalMedicationAllergyObservation, MedicationAllergyReconciliationEpisode
 __all__ += ["PatientMedicationProfileEntry", "PatientAllergyIntoleranceEntry", "ExternalMedicationAllergyObservation", "MedicationAllergyReconciliationEpisode"]
+from app.models.patient_identifier import PatientExternalIdentifier
+__all__ += ["PatientExternalIdentifier"]
