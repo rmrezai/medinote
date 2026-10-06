@@ -23,6 +23,13 @@ _ALLOWED_MODULES = frozenset({
     "safety",
     "cdi",
     "coding",
+    "medication-profile",
+    "allergy-profile",
+    "external-ehr",
+    "laboratory",
+    "radiology",
+    "referral",
+    "longitudinal-record",
 })
 _ALLOWED_SIGNAL_TYPES = frozenset({
     "physician-edit",
@@ -33,6 +40,13 @@ _ALLOWED_SIGNAL_TYPES = frozenset({
     "coding-correction",
     "cdi-correction",
     "workflow-friction",
+    "medication-reconciliation-correction",
+    "allergy-reconciliation-correction",
+    "external-record-reconciliation",
+    "lab-result-followup-correction",
+    "radiology-followup-correction",
+    "referral-followup-correction",
+    "history-reconciliation-correction",
 })
 _ALLOWED_DISPOSITIONS = frozenset({
     "accepted",
@@ -52,6 +66,10 @@ _ALLOWED_CHANGE_KINDS = frozenset({
     "coding-rule",
     "workflow",
     "documentation",
+    "reconciliation-rule",
+    "source-mapping-rule",
+    "result-followup-rule",
+    "history-rule",
 })
 _SAFE_REF = re.compile(r"^[A-Za-z0-9._:-]{1,160}$")
 
