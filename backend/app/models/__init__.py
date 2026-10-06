@@ -32,3 +32,13 @@ from app.models.validation import ValidationCase, ValidationRun
 __all__ += ["ValidationCase", "ValidationRun"]
 from app.models.security import AuditAnchor, LegalHold, RetentionSnapshot
 __all__ += ["AuditAnchor", "LegalHold", "RetentionSnapshot"]
+
+from app.models.learning import LearningSignalRecord, LearningPatternRecord, LearningCandidateRecord, LearningEvaluationRecord
+__all__ += ["LearningSignalRecord", "LearningPatternRecord", "LearningCandidateRecord", "LearningEvaluationRecord"]
+
+from app.models.problem_list import PatientProblemListEntry, EncounterDiagnosisClassification
+__all__ += ["PatientProblemListEntry", "EncounterDiagnosisClassification"]
+from app.models.medication_profile import PatientMedicationProfileEntry, PatientAllergyIntoleranceEntry, ExternalMedicationAllergyObservation, MedicationAllergyReconciliationEpisode
+__all__ += ["PatientMedicationProfileEntry", "PatientAllergyIntoleranceEntry", "ExternalMedicationAllergyObservation", "MedicationAllergyReconciliationEpisode"]
+from app.models.patient_identifier import PatientExternalIdentifier
+__all__ += ["PatientExternalIdentifier"]
