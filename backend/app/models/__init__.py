@@ -33,5 +33,5 @@ __all__ += ["ValidationCase", "ValidationRun"]
 from app.models.security import AuditAnchor, LegalHold, RetentionSnapshot
 __all__ += ["AuditAnchor", "LegalHold", "RetentionSnapshot"]
 
-from app.models.learning import LearningSignalRecord, LearningPatternRecord
-__all__ += ["LearningSignalRecord", "LearningPatternRecord"]
+from app.models.learning import LearningSignalRecord, LearningPatternRecord, LearningCandidateRecord, LearningEvaluationRecord
+__all__ += ["LearningSignalRecord", "LearningPatternRecord", "LearningCandidateRecord", "LearningEvaluationRecord"]
