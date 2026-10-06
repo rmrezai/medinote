@@ -26,6 +26,13 @@ _MODULE_EXTRA_SUITES = {
     "discharge": ("discharge-safety",),
     "signout": ("signout-safety",),
     "safety": ("safety-audit",),
+    "medication-profile": ("medication-state", "medication-reconciliation"),
+    "allergy-profile": ("allergy-reconciliation", "medication-safety"),
+    "external-ehr": ("external-record-provenance", "reconciliation-safety"),
+    "laboratory": ("lab-result-integrity", "critical-result-followup"),
+    "radiology": ("radiology-result-integrity", "critical-result-followup"),
+    "referral": ("referral-packet-integrity", "closed-loop-followup"),
+    "longitudinal-record": ("history-reconciliation", "record-retention"),
 }
 
 
