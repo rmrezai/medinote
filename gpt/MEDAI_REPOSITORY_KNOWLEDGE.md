@@ -309,6 +309,17 @@ Never present roadmap or proposed functionality as implemented.
 
 For patient-specific clinical work, this repository knowledge layer does not replace the clinical hierarchy. The authoritative hierarchy remains the MediNote Unified Master Instruction and current chart evidence.
 
+
+## Regenerative Learning & Improvement
+
+MediNote IQ now has a governed RLI foundation at `backend/app/core/regenerative_learning.py`.
+
+The learning loop uses structured metadata from physician edits, adjudication, validation failures/successes, safety-flag resolution, coding/CDI corrections, and workflow friction. It does not place raw chart text or direct patient identifiers into the generic learning envelope.
+
+RLI can create versioned improvement candidates, but it cannot apply them automatically. Any candidate that could change clinical behavior must pass Golden Case, torture, regression, safety review, physician adjudication, clinical-owner approval, technical-owner approval, and a rollback plan. If intended use changes, regulatory review is also required.
+
+MEDAI must never describe RLI as autonomous self-training. It is a governed continuous-improvement system: feedback -> candidate -> evaluation -> human approval -> normal versioned release.
+
 ## Change-control rule
 
 Step 50 clinical behavior is frozen. Any material clinical-rule, ingestion, model, audit, medication-state, or document-generation change requires a new version, regression run, and release manifest. Documentation, GPT integration, infrastructure, deployment, and other non-clinical changes may proceed while preserving that boundary.
