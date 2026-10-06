@@ -68,3 +68,78 @@ class LearningPatternRecord(Base):
     signal_refs: Mapped[list] = mapped_column(J, nullable=False, default=list)
     ready_for_candidate_review: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+
+
+class LearningCandidateRecord(Base):
+    __tablename__ = "learning_candidate_records"
+    __table_args__ = (
+        UniqueConstraint(
+            "organization_id",
+            "candidate_ref",
+            name="uq_learning_candidate_org_ref",
+        ),
+    )
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    organization_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("organizations.id"),
+        nullable=False,
+        index=True,
+    )
+    pattern_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("learning_pattern_records.id"),
+        nullable=False,
+        index=True,
+    )
+    candidate_ref: Mapped[str] = mapped_column(String(160), nullable=False)
+    module: Mapped[str] = mapped_column(String(40), nullable=False, index=True)
+    reason_code: Mapped[str] = mapped_column(String(160), nullable=False, index=True)
+    change_kind: Mapped[str] = mapped_column(String(80), nullable=False)
+    target_artifact_ref: Mapped[str] = mapped_column(String(160), nullable=False)
+    target_version_ref: Mapped[str] = mapped_column(String(160), nullable=False)
+    source_signal_refs: Mapped[list] = mapped_column(J, nullable=False, default=list)
+    baseline_ref: Mapped[str] = mapped_column(String(160), nullable=False)
+    evaluation_set_ref: Mapped[str] = mapped_column(String(160), nullable=False)
+    intended_use_changed: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    status: Mapped[str] = mapped_column(String(40), nullable=False, default="evaluation-pending")
+    auto_apply: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    production_mutation_allowed: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+
+class LearningEvaluationRecord(Base):
+    __tablename__ = "learning_evaluation_records"
+    __table_args__ = (
+        UniqueConstraint(
+            "organization_id",
+            "evaluation_ref",
+            name="uq_learning_evaluation_org_ref",
+        ),
+    )
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    organization_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("organizations.id"),
+        nullable=False,
+        index=True,
+    )
+    candidate_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("learning_candidate_records.id"),
+        nullable=False,
+        index=True,
+    )
+    candidate_ref: Mapped[str] = mapped_column(String(160), nullable=False, index=True)
+    evaluation_ref: Mapped[str] = mapped_column(String(160), nullable=False)
+    passed: Mapped[bool] = mapped_column(Boolean, nullable=False)
+    reason: Mapped[str] = mapped_column(String(240), nullable=False)
+    suite_results: Mapped[list] = mapped_column(J, nullable=False, default=list)
+    improved_or_equal: Mapped[bool] = mapped_column(Boolean, nullable=False)
+    review_queue_status: Mapped[str] = mapped_column(String(60), nullable=False)
+    automatic_promotion_allowed: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    production_mutation_performed: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
