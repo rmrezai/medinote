@@ -32,3 +32,6 @@ from app.models.validation import ValidationCase, ValidationRun
 __all__ += ["ValidationCase", "ValidationRun"]
 from app.models.security import AuditAnchor, LegalHold, RetentionSnapshot
 __all__ += ["AuditAnchor", "LegalHold", "RetentionSnapshot"]
+
+from app.models.learning import LearningSignalRecord, LearningPatternRecord
+__all__ += ["LearningSignalRecord", "LearningPatternRecord"]
