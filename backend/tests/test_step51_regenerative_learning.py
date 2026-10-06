@@ -162,6 +162,46 @@ class RegenerativeLearningTests(unittest.TestCase):
         self.assertFalse(decision.eligible_for_reviewed_release)
         self.assertEqual(decision.reason, "regulatory-review-required")
 
+    def test_longitudinal_modules_are_separate_learning_domains(self):
+        cases = (
+            ("medication-profile", "medication-reconciliation-correction"),
+            ("allergy-profile", "allergy-reconciliation-correction"),
+            ("external-ehr", "external-record-reconciliation"),
+            ("laboratory", "lab-result-followup-correction"),
+            ("radiology", "radiology-followup-correction"),
+            ("referral", "referral-followup-correction"),
+            ("longitudinal-record", "history-reconciliation-correction"),
+        )
+        signals = []
+        for index, (module, signal_type) in enumerate(cases, start=20):
+            signals.append(
+                self.signal(
+                    signal_ref=f"sig-{index}",
+                    module=module,
+                    signal_type=signal_type,
+                    reason_code=f"{module}-correction",
+                )
+            )
+        self.assertEqual({x.module for x in signals}, {x[0] for x in cases})
+
+    def test_longitudinal_improvements_remain_non_mutating(self):
+        signal = self.signal(
+            signal_ref="sig-90",
+            module="allergy-profile",
+            signal_type="allergy-reconciliation-correction",
+            reason_code="source-mismatch",
+        )
+        candidate = rli.propose_improvement(
+            candidate_ref="cand-90",
+            module="allergy-profile",
+            change_kind="reconciliation-rule",
+            source_signals=(signal,),
+            target_artifact_ref="allergy-reconciliation",
+            target_version_ref="v1",
+        )
+        self.assertFalse(candidate.auto_apply)
+        self.assertFalse(candidate.production_mutation_allowed)
+
 
 if __name__ == "__main__":
     unittest.main()
