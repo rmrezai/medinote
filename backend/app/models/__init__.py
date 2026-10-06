@@ -35,3 +35,8 @@ __all__ += ["AuditAnchor", "LegalHold", "RetentionSnapshot"]
 
 from app.models.learning import LearningSignalRecord, LearningPatternRecord, LearningCandidateRecord, LearningEvaluationRecord
 __all__ += ["LearningSignalRecord", "LearningPatternRecord", "LearningCandidateRecord", "LearningEvaluationRecord"]
+
+from app.models.problem_list import PatientProblemListEntry, EncounterDiagnosisClassification
+__all__ += ["PatientProblemListEntry", "EncounterDiagnosisClassification"]
+from app.models.medication_profile import PatientMedicationProfileEntry, PatientAllergyIntoleranceEntry, ExternalMedicationAllergyObservation, MedicationAllergyReconciliationEpisode
+__all__ += ["PatientMedicationProfileEntry", "PatientAllergyIntoleranceEntry", "ExternalMedicationAllergyObservation", "MedicationAllergyReconciliationEpisode"]
