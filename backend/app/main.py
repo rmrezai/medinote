@@ -21,15 +21,15 @@ from app.api.forensic_routes import router as forensic_router
 from app.api.retention_routes import router as retention_router
 from app.core.security_middleware import security_middleware
 from app.core.config import settings
-from app.db.base import Base
 from app.db.session import engine, SessionLocal
 from app.services.validation_seed import seed_validation_cases
+from app.services.schema_upgrade_service import apply_schema_upgrades
 import app.models  # noqa: F401
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    Base.metadata.create_all(bind=engine)
+    apply_schema_upgrades(engine)
     with SessionLocal() as db:
         seed_validation_cases(db)
     yield
